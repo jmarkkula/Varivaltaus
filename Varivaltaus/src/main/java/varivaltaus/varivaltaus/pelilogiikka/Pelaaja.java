@@ -17,4 +17,6 @@ public class Pelaaja {
         this.nykyinenVari=aloitusVari;
         this.pelaajaNro=pelaajaNro;
     }
+    
+    
 }

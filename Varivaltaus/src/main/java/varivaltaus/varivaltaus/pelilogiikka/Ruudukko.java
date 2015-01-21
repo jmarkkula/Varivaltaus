@@ -20,4 +20,11 @@ public class Ruudukko {
         ruudut[x][y] = r;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Ruudukko{" + "ruudut=" + ruudut + '}';
+    }
+    
+    
 }
