@@ -4,5 +4,5 @@
 
 15.1. maven-projektin luominen, dokumentaatiota 30min
 
-21.1. gitin kanssa taistelua/ maven-projektin uudelleenluominen... 1h
+21.1. gitin kanssa taistelua/ maven-projektin uudelleenluominen... 1h    
       luokkakaavio ja koodailun aloittelua 2h
