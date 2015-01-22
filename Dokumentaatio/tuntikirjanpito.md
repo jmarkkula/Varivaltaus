@@ -1,6 +1,6 @@
 # Tuntikirjanpito
 
-(viikot päättyvät perjantai-dediksiin)
+(viikot alkavat/päättyvät perjantai-dediksiin)
 
 ####Viikko I 
 14.1. aihemäärittelyn tekoa, repon luominen 1h
