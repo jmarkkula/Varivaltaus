@@ -8,3 +8,5 @@
           luokkakaavio ja koodailun aloittelua 2h
 
 21.1. koodausta 1-2h
+
+22.1. ohjelmointia, testien duunausta 2.5h
