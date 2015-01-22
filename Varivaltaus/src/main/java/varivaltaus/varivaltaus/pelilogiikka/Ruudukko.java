@@ -32,6 +32,10 @@ public class Ruudukko {
     }
 
     public boolean setRuutu(int x, int y, Ruutu r) {
+        if(ruudut[y][x]!=null) {
+            return false;
+        }
+        
         ruudut[y][x] = r;
         return true;
     }

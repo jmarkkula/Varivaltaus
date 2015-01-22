@@ -45,5 +45,12 @@ public class PelaajaTest {
         assertEquals(2, p.getNykyinenVari());
     }
     
+            @Test
+    public void valtausToimiiOikein() {
+        Pelaaja p = new Pelaaja(1, 2);
+        
+        assertEquals(2, p.getNykyinenVari());
+    }
+    
     
 }

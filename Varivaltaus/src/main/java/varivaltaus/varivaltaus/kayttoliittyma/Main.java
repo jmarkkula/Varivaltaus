@@ -1,6 +1,7 @@
+package varivaltaus.varivaltaus.kayttoliittyma;
+
 
 import varivaltaus.varivaltaus.pelilogiikka.Pelinalustaja;
-import varivaltaus.varivaltaus.pelilogiikka.Ruutu;
 
 
 /**
@@ -13,9 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
         Pelinalustaja pa = new Pelinalustaja(30, 20, 5);
-        System.out.println(pa.getRuudukko());
         
-//        Ruutu r = new Ruutu(1);
-//        r.valtaa(p1, 1);
+        System.out.println("Peliruudukko: ['väri', onko vallattu, kuka vallannut]");
+        System.out.println(pa.getRuudukko());
+       
     }
 }

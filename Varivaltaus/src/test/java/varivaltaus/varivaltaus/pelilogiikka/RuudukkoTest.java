@@ -1,11 +1,12 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+import java.util.Arrays;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.junit.Assert;
 
 /**
  *
@@ -54,35 +55,56 @@ public class RuudukkoTest {
                 }
             }
         }
-        assertEquals(true, taytetty);
+
+        assertTrue(taytetty);
     }
+
+    @Test
+    public void konstruktoriGeneroiVaihteleviaRuudukoita() {
+        Ruudukko r1 = new Ruudukko(30, 20, 5);
+        Ruudukko r2 = new Ruudukko(30, 20, 5);
+
+        assertThat(r1.toString(), not(equalTo(r2.toString())));
+    }
+
+    @Test
+    public void ruudukkoTaytetaanOikeanValinVareilla() {
+        Ruudukko r = new Ruudukko(30, 20, 5);
+
+        for (int y = 0; y < r.getKorkeus(); y++) {
+            for (int x = 0; x < r.getLeveys(); x++) {
+                int ruudunVari = r.getRuutu(x, y).getVari();
+                assertTrue(ruudunVari < 6);
+                assertTrue(ruudunVari > 0);
+            }
+        }
+
+    }
+
+    @Test
+    public void ruudukkoTaytetaanKaikillaVareilla() {
+        Ruudukko r = new Ruudukko(30, 20, 5);
+        boolean[] kohdatutVarit = {false, false, false, false, false};
+
+        for (int i = 0; i < r.getKorkeus(); i++) {
+            for (int j = 0; j < r.getLeveys(); j++) {
+                int ruudunVari = r.getRuutu(j, i).getVari();
+                kohdatutVarit[ruudunVari - 1] = true;
+            }
+        }
+
+        boolean[] haluttu = {true, true, true, true, true};
+
+        Assert.assertTrue(Arrays.equals(haluttu, kohdatutVarit));
+    }
+
+
     
-    //TEE VALMIIKSI :))
-//    @Test
-//    public void ruudukkoTaytetaanOikeanVariskaalanRuuduilla() {
-//        Ruudukko r = new Ruudukko(30, 20, 5);
-//        boolean[] varit = new boolean[5];
-//
-//        for (int i = 0; i < r.getKorkeus(); i++) {
-//            for (int j = 0; j < r.getLeveys(); j++) {
-//                varit[r.getRuutu(j, i).getVari()]=true;
-//            }
-//        }
-//        assertEquals(true, taytetty);
-//    }
-
     @Test
-    public void setRuutuAsettaaOikein1() {
+    public void ruutujaEiVoiSetataUudelleenRuudukonLuomisenJälkeen() {
         Ruudukko r = new Ruudukko(30, 20, 5);
-        r.setRuutu(1, 2, ruutu);
-        assertEquals(ruutu, r.getRuutu(1, 2));
-    }
 
-    @Test
-    public void setRuutuAsettaaOikein2() {
-        Ruudukko r = new Ruudukko(30, 20, 5);
-        r.setRuutu(2, 1, ruutu);
-        assertEquals(ruutu, r.getRuutu(2, 1));
+        assertFalse(r.setRuutu(1, 2, ruutu));
     }
 
 }
