@@ -1,7 +1,5 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
-import java.util.Random;
-
 /**
  *
  * @author juma

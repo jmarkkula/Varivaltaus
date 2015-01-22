@@ -16,21 +16,7 @@ public class PelaajaTest {
     public PelaajaTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
 
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -58,4 +44,6 @@ public class PelaajaTest {
         Pelaaja p = new Pelaaja(1, 2);
         assertEquals(2, p.getNykyinenVari());
     }
+    
+    
 }

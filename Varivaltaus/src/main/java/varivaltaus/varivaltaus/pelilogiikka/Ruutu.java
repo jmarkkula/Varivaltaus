@@ -30,20 +30,20 @@ public class Ruutu {
     }
 
     public int getVari() {
-        return vari;
+        return this.vari;
     }
 
     public boolean isVallattu() {
-        return vallattu;
+        return this.vallattu;
     }
 
     public Pelaaja getValtaaja() {
-        return valtaaja;
+        return this.valtaaja;
     }
 
     @Override
     public String toString() {
-        return "[" + vari + "," + vallattu + "," + valtaaja + "]";
+        return "[" + this.vari + "," + this.vallattu + "," + this.valtaaja + "]";
     }
 
 }

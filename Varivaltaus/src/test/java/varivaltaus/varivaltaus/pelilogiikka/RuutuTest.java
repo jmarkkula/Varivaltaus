@@ -21,8 +21,8 @@ public class RuutuTest {
 
     @Before
     public void setUp() {
-        Pelaaja p1 = new Pelaaja(1, 1);
-        Pelaaja p2 = new Pelaaja(2, 2);
+        p1 = new Pelaaja(1, 1);
+        p2 = new Pelaaja(2, 2);
     }
 
     @After
@@ -47,7 +47,15 @@ public class RuutuTest {
     }
 
     @Test
-    public void valtaamatonVallataan() {
+    public void valtaamatonVallataanPalauttaaTrue() {
+        Ruutu r = new Ruutu(1);
+
+        assertEquals(true, r.valtaa(p1, 1));
+    }
+
+
+    @Test
+    public void valtaamatonVallataanMuuttaaArvotOikein() {
         Ruutu r = new Ruutu(1);
         r.valtaa(p1, 1);
 
@@ -55,7 +63,15 @@ public class RuutuTest {
     }
 
     @Test
-    public void vallattuEiValtaudu() {
+    public void vallattunValtausPalauttaaFalse() {
+        Ruutu r = new Ruutu(1);
+        r.valtaa(p1, 1);
+
+        assertEquals(false, r.valtaa(p2, 2));
+    }
+    
+        @Test
+    public void vallattunValtausEiMuutaArvoja() {
         Ruutu r = new Ruutu(1);
         r.valtaa(p1, 1);
         r.valtaa(p2, 2);
