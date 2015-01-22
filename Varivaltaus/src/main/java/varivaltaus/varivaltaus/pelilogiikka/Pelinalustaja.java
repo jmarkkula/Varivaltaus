@@ -9,34 +9,13 @@ import java.util.Random;
 public class Pelinalustaja {
 
     private final int variLkm;
-    private final Random satunnaistaja;
-    private Ruudukko ruudukko;
+    private final Ruudukko ruudukko;
     private Vuoronantaja vuoronantaja;
     private Varinvaihtaja varinvaihtaja;
 
-    public Pelinalustaja(int x, int y, int variLkm) {
-        this.satunnaistaja = new Random();
+    public Pelinalustaja(int leveys, int korkeus, int variLkm) {
         this.variLkm = variLkm;
-
-        luoRuudukko(x, y);
-    }
-
-    private void luoRuudukko(int x, int y) {
-        this.ruudukko = new Ruudukko(x, y);
-
-        for (int i = 0; i < y; i++) {
-            for (int j = 0; j < x; j++) {
-
-                Ruutu r = this.luoRuutu();
-                this.ruudukko.setRuutu(i, j, r);
-
-            }
-        }
-    }
-
-    private Ruutu luoRuutu() {
-        int vari = this.satunnaistaja.nextInt(variLkm - 1);
-        return new Ruutu(vari);
+        this.ruudukko = new Ruudukko(leveys, korkeus, variLkm);
     }
 
     public Ruudukko getRuudukko() {

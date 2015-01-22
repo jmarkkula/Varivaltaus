@@ -1,5 +1,6 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+
 /**
  *
  * @author juma
@@ -9,12 +10,6 @@ public class Ruutu {
     private int vari;
     private boolean vallattu;
     private Pelaaja valtaaja;
-
-    public Ruutu(int vari, Pelaaja valtaaja) {
-        this.vari = vari;
-        this.vallattu = true;
-        this.valtaaja = valtaaja;
-    }
 
     public Ruutu(int vari) {
         this.vari = vari;

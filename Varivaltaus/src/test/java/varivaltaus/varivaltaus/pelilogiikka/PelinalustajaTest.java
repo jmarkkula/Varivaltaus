@@ -11,24 +11,13 @@ import static org.junit.Assert.*;
  *
  * @author juma
  */
-public class Pelinalustaja {
+public class PelinalustajaTest {
 
-    Pelinalustaja pa;
-
-    public Pelinalustaja() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
+    PelinalustajaTest pa;
 
     @Before
     public void setUp() {
-        pa = new Pelinalustaja();
+        pa = new PelinalustajaTest();
     }
 
     @After
