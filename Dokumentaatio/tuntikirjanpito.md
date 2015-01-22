@@ -1,13 +1,13 @@
 # Tuntikirjanpito
 
+(viikot päättyvät perjantai-dediksiin)
 
-##Viikko I 
-(viikot päättyvät perjantai-deadlineihin)
+####Viikko I 
 14.1. aihemäärittelyn tekoa, repon luominen 1h
 
 15.1. maven-projektin luominen, dokumentaatiota 30min
 
-##Viikko 2
+####Viikko 2
 
 20.1. gitin kanssa taistelua/ maven-projektin uudelleenluominen... 1h    
     luokkakaavio ja koodailun aloittelua 2h
