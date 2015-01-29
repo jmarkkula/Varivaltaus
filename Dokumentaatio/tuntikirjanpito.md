@@ -16,3 +16,8 @@
 
 22.1. ohjelmointia, testien duunausta 2.5h        
     lisää ohjelmointia&testejä, pitin ja coberturan kanssa leikkimistä, dokumentaatiota repoon, vähän löysästi 4h
+    
+
+####Viikko 3
+
+28.1. ohjelmointia 3h
