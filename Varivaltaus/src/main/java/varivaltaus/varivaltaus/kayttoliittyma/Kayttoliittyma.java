@@ -5,11 +5,16 @@
  */
 package varivaltaus.varivaltaus.kayttoliittyma;
 
+import java.util.List;
+import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
+
 
 /**
  *
  * @author juma
  */
 public interface Kayttoliittyma {
-    int kysyVari(int[] varivaihtoehdot);
+    int kysyVari(List<Integer> varivaihtoehdot, Pelaaja p);
+    
+    void paivitaPelilauta();
 }

@@ -1,5 +1,6 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+import varivaltaus.varivaltaus.kayttoliittyma.teksti.Tekstikayttoliittyma;
 import varivaltaus.varivaltaus.kayttoliittyma.*;
 
 /**
@@ -12,6 +13,7 @@ public class Kaynnistys {
         Pelinalustaja pa = new Pelinalustaja(30, 20, 5);
         Tekstikayttoliittyma ui = new Tekstikayttoliittyma(pa.getRuudukko(), pa.getPelaajat());
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
+        
 
     }
 }

@@ -1,6 +1,8 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import varivaltaus.varivaltaus.kayttoliittyma.*;
 
 /**
@@ -18,26 +20,27 @@ public class Pelinpyorittaja {
         this.ruudukko = ruudukko;
         this.variLkm = ruudukko.getVariLkm();
         this.pelaajat = pelaajat;
-        this.ui=ui;
-        //this.PELI();
+        this.ui = ui;
+
+        this.aloitaPeli();
     }
 
-    private void PELI() { //kuvaava nimi
+    private void aloitaPeli() {
         Pelaaja voittaja = null;
-        
+
         while (true) {
             Pelaaja seuraava = this.pelaajat.removeFirst();
-            
+
             annaVuoro(seuraava);
-            
-            if(this.voittaako(seuraava)) {
-                voittaja=seuraava;
+
+            if (this.voittaako(seuraava)) {
+                voittaja = seuraava;
                 break;
             }
-            
+
             this.pelaajat.addLast(seuraava);
         }
-        
+
         System.out.println("Pelaaja " + voittaja.getPelaajaNro() + " voitti!");
     }
 
@@ -45,32 +48,48 @@ public class Pelinpyorittaja {
         return p.getAlueenKoko() >= this.ruudukko.getRuutujenMaara() / 2; //tarkista meneekö puolellajakohommeli oikein
     }
 
-    private void annaVuoro(Pelaaja seuraava) {
-        int vari = kysyVaria();
-        vaihdaVari(vari);
-        valtaaRuudut();
+    private void annaVuoro(Pelaaja p) {
+        int vari = kysyVaria(vapaatVarit(), p);
+//        vaihdaVari(vari, p);
+//        valtaaRuudut();
     }
 
-    private int kysyVaria() {
-        int[] varit = vapaatVarit();
-        return this.ui.kysyVari(varit);
+    private int kysyVaria(ArrayList<Integer> vapaatVarit, Pelaaja p) {
+        return this.ui.kysyVari(vapaatVarit, p);
     }
 
-    private void vaihdaVari(int vari) {
+    private ArrayList<Integer> vapaatVarit() {
+        ArrayList<Integer> varit = new ArrayList();
+
+        for (int i = 1; i <= variLkm; i++) {
+            if (onkoVapaaVari(i)) {
+                varit.add(i);
+            }
+        }
+
+        return varit;
+    }
+
+    private boolean onkoVapaaVari(int i) {
+        for (Pelaaja p : this.pelaajat) {
+            if (p.getNykyinenVari() == i) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void vaihdaVari(int vari, Pelaaja p) {
         /*
-        pelaajan väri, pelaajan alueen ruutujen värit
-        */
+         pelaajan väri, pelaajan alueen ruutujen värit
+         */
     }
 
     private void valtaaRuudut() {
         /*
-        etsi pelaajan alueen ruutujen viereisiä, pelaajan värin värisiä valtaamattomia ruutuja ja valtaa ne
-        */
+         etsi pelaajan alueen ruutujen viereisiä, pelaajan värin värisiä valtaamattomia ruutuja ja valtaa ne
+         */
     }
 
-    private int[] vapaatVarit() {
-        //todo, harkitse eri palautusmuotoa myös
-        
-        return new int[]{666};
-    }
 }
