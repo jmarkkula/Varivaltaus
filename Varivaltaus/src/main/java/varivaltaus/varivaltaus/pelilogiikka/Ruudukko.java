@@ -20,7 +20,6 @@ public class Ruudukko {
     private void luoRuudut() {
         for (int y = 0; y < this.ruudut.length; y++) {
             for (int x = 0; x < this.ruudut[0].length; x++) {
-
                 Ruutu r = new Ruutu(this.s.satunnaisLuku(variLkm));
                 this.setRuutu(x, y, r);
             }
@@ -28,32 +27,36 @@ public class Ruudukko {
     }
 
     public Ruutu getRuutu(int x, int y) {
-        return ruudut[y][x];
+        return this.ruudut[y][x];
     }
 
     public boolean setRuutu(int x, int y, Ruutu r) {
-        if(ruudut[y][x]!=null) {
+        if (this.ruudut[y][x] != null) {
             return false;
         }
-        
-        ruudut[y][x] = r;
+        this.ruudut[y][x] = r;
         return true;
     }
-    
+
     public int getLeveys() {
-        return ruudut[0].length;
+        return this.ruudut[0].length;
     }
-    
-       public int getKorkeus() {
-        return ruudut.length;
+
+    public int getKorkeus() {
+        return this.ruudut.length;
     }
-    
-    
+
+    public int getRuutujenMaara() {
+        return this.ruudut.length * this.ruudut[0].length;
+    }
+
+    public int getVariLkm() {
+        return this.variLkm;
+    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
         for (int y = 0; y < this.ruudut.length; y++) {
             for (int x = 0; x < this.ruudut[0].length; x++) {
                 sb.append(this.ruudut[y][x]);
@@ -62,5 +65,4 @@ public class Ruudukko {
         }
         return sb.toString();
     }
-
 }

@@ -41,6 +41,10 @@ public class Pelaaja {
         return pelaajaNro;
     }
     
+    public int getAlueenKoko() {
+        return this.alue.size();
+    }
+    
     
 
     @Override
