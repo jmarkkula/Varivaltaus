@@ -21,7 +21,7 @@ public class RuudukkoTest {
 
     @Before
     public void setUp() {
-        ruutu = new Ruutu(1);
+        ruutu = new Ruutu(1,1,1);
     }
 
     @After

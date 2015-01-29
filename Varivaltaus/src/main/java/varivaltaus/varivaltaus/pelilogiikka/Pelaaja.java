@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author juma
  */
-public class Pelaaja {
+public class Pelaaja{
 
     private int nykyinenVari;
     private final ArrayList<Ruutu> alue;
@@ -18,40 +18,44 @@ public class Pelaaja {
         this.pelaajaNro = pelaajaNro;
     }
 
+    public void vaihdaVari(int uusiVari) {
+        this.nykyinenVari = uusiVari;
+
+        for (Ruutu r : this.alue) {
+            r.setVari(uusiVari);
+        }
+    }
+
     public boolean valtaaRuutu(Ruutu r) {
-        boolean onnistui = r.valtaa(this, this.nykyinenVari);
-        
-        if(onnistui) {
+        boolean onnistui = r.merkitseVallatuksi(this);
+
+        if (onnistui) {
             this.alue.add(r);
         }
-        
+
         return onnistui;
     }
-    
+
     public int getNykyinenVari() {
         return nykyinenVari;
     }
-
-// ehkä parempi jos ei pääse muualta sotkemaan?    
-//    public ArrayList<Ruutu> getAlue() {
-//        return alue;
-//    }
-
+  
+    public ArrayList<Ruutu> getListaAlueesta() {
+        return (ArrayList<Ruutu>) this.alue.clone();
+    }
+    
     public int getPelaajaNro() {
         return pelaajaNro;
     }
-    
+
     public int getAlueenKoko() {
         return this.alue.size();
     }
-    
-    
 
     @Override
     public String toString() {
         return "[" + pelaajaNro + "," + nykyinenVari + "]";
     }
-    
-    
+
 
 }

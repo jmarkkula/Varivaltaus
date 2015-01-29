@@ -2,7 +2,6 @@ package varivaltaus.varivaltaus.pelilogiikka;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import varivaltaus.varivaltaus.kayttoliittyma.*;
 
 /**
@@ -26,10 +25,17 @@ public class Pelinpyorittaja {
     }
 
     private void aloitaPeli() {
+        for(Pelaaja p: this.pelaajat) {
+            this.valtaaUudetRuudut(p);
+        }
+        
         Pelaaja voittaja = null;
 
         while (true) {
+            this.ui.paivitaPelilauta();
+
             Pelaaja seuraava = this.pelaajat.removeFirst();
+            this.pelaajat.addLast(seuraava);
 
             annaVuoro(seuraava);
 
@@ -38,7 +44,6 @@ public class Pelinpyorittaja {
                 break;
             }
 
-            this.pelaajat.addLast(seuraava);
         }
 
         System.out.println("Pelaaja " + voittaja.getPelaajaNro() + " voitti!");
@@ -50,8 +55,8 @@ public class Pelinpyorittaja {
 
     private void annaVuoro(Pelaaja p) {
         int vari = kysyVaria(vapaatVarit(), p);
-//        vaihdaVari(vari, p);
-//        valtaaRuudut();
+        p.vaihdaVari(vari);
+        this.valtaaUudetRuudut(p);
     }
 
     private int kysyVaria(ArrayList<Integer> vapaatVarit, Pelaaja p) {
@@ -80,16 +85,26 @@ public class Pelinpyorittaja {
         return true;
     }
 
-    private void vaihdaVari(int vari, Pelaaja p) {
-        /*
-         pelaajan väri, pelaajan alueen ruutujen värit
-         */
+    private void valtaaUudetRuudut(Pelaaja p) {
+        ArrayList<Ruutu> alue = p.getListaAlueesta();
+
+        for (Ruutu r : alue) {
+            valtaaYmparoivatRuudut(r, p);
+        }
+
     }
 
-    private void valtaaRuudut() {
-        /*
-         etsi pelaajan alueen ruutujen viereisiä, pelaajan värin värisiä valtaamattomia ruutuja ja valtaa ne
-         */
+    private void valtaaYmparoivatRuudut(Ruutu r, Pelaaja p) {
+
+        ArrayList<Ruutu> viereiset = this.ruudukko.getViereisetRuudut(r.getX(), r.getY());
+
+        for (Ruutu v : viereiset) {
+            if (!v.isVallattu() && v.getVari() == p.getNykyinenVari()) {
+                p.valtaaRuutu(v);
+                valtaaYmparoivatRuudut(v, p);
+            }
+        }
+
     }
 
 }

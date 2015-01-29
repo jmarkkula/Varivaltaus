@@ -10,19 +10,22 @@ public class Ruutu {
     private int vari;
     private boolean vallattu;
     private Pelaaja valtaaja;
+    private final int x;
+    private final int y;
 
-    public Ruutu(int vari) {
+    public Ruutu(int vari, int x, int y) {
         this.vari = vari;
         this.vallattu = false;
         this.valtaaja = null;
+        this.x=x;
+        this.y=y;
     }
 
-    public boolean valtaa(Pelaaja p, int vari) {
+    public boolean merkitseVallatuksi(Pelaaja p) {
         if (this.vallattu) {
             return false;
         }
 
-        this.vari = vari;
         this.valtaaja = p;
         this.vallattu = true;
 
@@ -32,6 +35,10 @@ public class Ruutu {
     public int getVari() {
         return this.vari;
     }
+    
+    public void setVari(int vari) {
+        this.vari=vari;
+    }
 
     public boolean isVallattu() {
         return this.vallattu;
@@ -39,6 +46,22 @@ public class Ruutu {
 
     public Pelaaja getValtaaja() {
         return this.valtaaja;
+    }
+    
+    public int getX() {
+        return this.x;
+    }
+    
+    public int getY() {
+        return this.y;
+    }
+    
+    public String yksinkertainenString() {
+        if(this.isVallattu()) {
+            return "[*" + this.vari + "*]";
+        }
+        
+        return "[ " + this.vari + " ]";
     }
 
     @Override

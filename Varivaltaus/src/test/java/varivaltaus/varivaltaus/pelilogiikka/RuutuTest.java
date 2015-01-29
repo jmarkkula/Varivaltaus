@@ -32,47 +32,47 @@ public class RuutuTest {
     //
     @Test
     public void konstruktoriAsettaaTiedotOikein1() {
-        Ruutu r = new Ruutu(1);
+        Ruutu r = new Ruutu(1,0,0);
 
         assertEquals("[1,false,null]", r.toString());
     }
 
     @Test
     public void konstruktoriAsettaaTiedotOikein5() {
-        Ruutu r = new Ruutu(5);
+        Ruutu r = new Ruutu(5,0,0);
 
         assertEquals("[5,false,null]", r.toString());
     }
 
     @Test
     public void valtaamatonVallataanPalauttaaTrue() {
-        Ruutu r = new Ruutu(1);
+        Ruutu r = new Ruutu(1,0,0);
 
-        assertEquals(true, r.valtaa(p1, 1));
+        assertEquals(true, r.merkitseVallatuksi(p1));
     }
 
 
     @Test
     public void valtaamatonVallataanMuuttaaArvotOikein() {
-        Ruutu r = new Ruutu(1);
-        r.valtaa(p1, 1);
+        Ruutu r = new Ruutu(1,0,0);
+        r.merkitseVallatuksi(p1);
 
         assertEquals("[1,true,[1,1]]", r.toString());
     }
 
     @Test
     public void vallattunValtausPalauttaaFalse() {
-        Ruutu r = new Ruutu(1);
-        r.valtaa(p1, 1);
+        Ruutu r = new Ruutu(1,0,0);
+        r.merkitseVallatuksi(p1);
 
-        assertEquals(false, r.valtaa(p2, 2));
+        assertEquals(false, r.merkitseVallatuksi(p2));
     }
     
         @Test
     public void vallattunValtausEiMuutaArvoja() {
-        Ruutu r = new Ruutu(1);
-        r.valtaa(p1, 1);
-        r.valtaa(p2, 2);
+        Ruutu r = new Ruutu(1,0,0);
+        r.merkitseVallatuksi(p1);
+        r.merkitseVallatuksi(p2);
 
         assertEquals("[1,true,[1,1]]", r.toString());
     }

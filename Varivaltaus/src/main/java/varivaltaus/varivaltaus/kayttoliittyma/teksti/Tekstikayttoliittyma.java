@@ -19,23 +19,34 @@ public class Tekstikayttoliittyma implements Kayttoliittyma {
     public Tekstikayttoliittyma(Ruudukko r, LinkedList<Pelaaja> p) {
         this.ruudukko = r;
         this.pelaajat = p;
-        this.lukija=new Lukija();
+        this.lukija = new Lukija();
     }
 
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja p) {
-        System.out.println("Valitse uusi värisi (vaihtoehdot: " + varivaihtoehdot + " ):");
-        int luku = this.lukija.lueIntSyote();
-        return luku;
+        int luku;
+        while (true) {
+            System.out.println("Pelaaja " + p.getPelaajaNro() + ", valitse uusi värisi (vaihtoehdot: " + varivaihtoehdot + " ):");
+            luku = this.lukija.lueIntSyote();
+            
+            if(varivaihtoehdot.contains(luku)) {
+                System.out.println();
+                return luku;
+            } 
+            
+            System.out.println("Et voi valita tuota väriä.");
+        }
+
     }
 
     @Override
     public void paivitaPelilauta() {
         System.out.println("Pelilauta:");
-        System.out.println(this.ruudukko.toString());
+        System.out.println(this.ruudukko.yksinkertainenString());
         System.out.println();
-        for(Pelaaja p: this.pelaajat) {
-            System.out.println("Pelaajan " + p.getPelaajaNro() + " väri:" + p.getNykyinenVari());
+        for (Pelaaja p : this.pelaajat) {
+            System.out.println("Pelaajan " + p.getPelaajaNro() + " väri: " + p.getNykyinenVari());
         }
+        System.out.println();
     }
 }
