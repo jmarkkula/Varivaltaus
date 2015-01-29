@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author juma
  */
-public class Pelaaja{
+public class Pelaaja {
 
     private int nykyinenVari;
     private final ArrayList<Ruutu> alue;
@@ -39,11 +39,11 @@ public class Pelaaja{
     public int getNykyinenVari() {
         return nykyinenVari;
     }
-  
+
     public ArrayList<Ruutu> getListaAlueesta() {
         return (ArrayList<Ruutu>) this.alue.clone();
     }
-    
+
     public int getPelaajaNro() {
         return pelaajaNro;
     }
@@ -56,6 +56,5 @@ public class Pelaaja{
     public String toString() {
         return "[" + pelaajaNro + "," + nykyinenVari + "]";
     }
-
 
 }

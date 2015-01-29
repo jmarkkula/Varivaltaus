@@ -7,7 +7,8 @@ import java.util.LinkedList;
  * @author juma
  */
 public class Pelinalustaja {
-private final Ruudukko ruudukko;
+
+    private final Ruudukko ruudukko;
     private LinkedList<Pelaaja> pelaajat;
 
     public Pelinalustaja(int leveys, int korkeus, int variLkm) {
@@ -40,7 +41,5 @@ private final Ruudukko ruudukko;
 
         return p;
     }
-
-
 
 }

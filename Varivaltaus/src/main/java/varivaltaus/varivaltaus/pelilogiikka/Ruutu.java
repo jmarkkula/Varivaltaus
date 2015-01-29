@@ -1,6 +1,5 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
-
 /**
  *
  * @author juma
@@ -17,8 +16,8 @@ public class Ruutu {
         this.vari = vari;
         this.vallattu = false;
         this.valtaaja = null;
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
     }
 
     public boolean merkitseVallatuksi(Pelaaja p) {
@@ -35,9 +34,9 @@ public class Ruutu {
     public int getVari() {
         return this.vari;
     }
-    
+
     public void setVari(int vari) {
-        this.vari=vari;
+        this.vari = vari;
     }
 
     public boolean isVallattu() {
@@ -47,20 +46,20 @@ public class Ruutu {
     public Pelaaja getValtaaja() {
         return this.valtaaja;
     }
-    
+
     public int getX() {
         return this.x;
     }
-    
+
     public int getY() {
         return this.y;
     }
-    
+
     public String yksinkertainenString() {
-        if(this.isVallattu()) {
+        if (this.isVallattu()) {
             return "[*" + this.vari + "*]";
         }
-        
+
         return "[ " + this.vari + " ]";
     }
 

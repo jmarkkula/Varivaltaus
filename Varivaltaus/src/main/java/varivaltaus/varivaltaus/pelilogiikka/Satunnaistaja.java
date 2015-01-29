@@ -13,8 +13,8 @@ public class Satunnaistaja {
     public Satunnaistaja() {
         this.random = new Random();
     }
-    
+
     public int satunnaisLuku(int suurinMahd) {
-        return this.random.nextInt(suurinMahd)+1;
+        return this.random.nextInt(suurinMahd) + 1;
     }
 }

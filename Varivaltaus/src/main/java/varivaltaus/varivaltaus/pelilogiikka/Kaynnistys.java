@@ -10,9 +10,10 @@ import varivaltaus.varivaltaus.kayttoliittyma.*;
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        Pelinalustaja pa = new Pelinalustaja(5, 10, 5); //HUOMHUOM MUOKKAA SITTEN OIKEAN KOKOISEKSI LAUTA
+        Pelinalustaja pa = new Pelinalustaja(4, 3, 5); //HUOMHUOM MUOKKAA SITTEN OIKEAN KOKOISEKSI LAUTA
         Tekstikayttoliittyma ui = new Tekstikayttoliittyma(pa.getRuudukko(), pa.getPelaajat());
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
+        pp.aloitaPeli();
         
 
     }

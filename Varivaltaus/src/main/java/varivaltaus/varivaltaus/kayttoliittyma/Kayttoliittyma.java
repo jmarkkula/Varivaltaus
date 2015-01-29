@@ -7,6 +7,7 @@ package varivaltaus.varivaltaus.kayttoliittyma;
 
 import java.util.List;
 import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
+import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 
 /**
@@ -16,5 +17,7 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
 public interface Kayttoliittyma {
     int kysyVari(List<Integer> varivaihtoehdot, Pelaaja p);
     
-    void paivitaPelilauta();
+    void paivitaPelilauta(Ruudukko ruudukko, List<Pelaaja> pelaajat);
+    
+    void julistaVoittaja(Pelaaja p);
 }
