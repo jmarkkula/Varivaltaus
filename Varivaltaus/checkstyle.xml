@@ -17,7 +17,7 @@
         <!-- Miscellaneous -->
         <module name='Indentation' />
 
-        <!--- Naming Conventions -->
+        <!-- Naming Conventions -->
 
         <module name='ClassTypeParameterName' />
         <module name='ConstantName' />

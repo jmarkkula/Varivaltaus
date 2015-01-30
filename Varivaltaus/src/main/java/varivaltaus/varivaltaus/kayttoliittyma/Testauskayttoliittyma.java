@@ -3,17 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package varivaltaus.varivaltaus.pelilogiikka;
+package varivaltaus.varivaltaus.kayttoliittyma;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import varivaltaus.varivaltaus.kayttoliittyma.Kayttoliittyma;
+import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
+import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
+import varivaltaus.varivaltaus.pelilogiikka.Satunnaistaja;
 
 /**
  *
  * @author juma
  */
+
+//Tämä luokka ei oikein toimi tällä hetkellä 
+
 public class Testauskayttoliittyma implements Kayttoliittyma {
 
     public Pelaaja voittaja;
