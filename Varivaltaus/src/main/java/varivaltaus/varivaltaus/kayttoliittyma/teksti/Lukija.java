@@ -20,9 +20,13 @@ public class Lukija {
         this.l = new Scanner(System.in);
     }
 
+    public Lukija(String syote) {
+        this.l = new Scanner(syote);
+    }
+
     public int lueIntSyote() {
         int luku;
-        
+
         while (true) {
             try {
                 luku = l.nextInt();

@@ -12,9 +12,10 @@ public class Tekstikayttoliittyma implements Kayttoliittyma {
 
     private final Lukija lukija;
 
-    public Tekstikayttoliittyma(Ruudukko r, List<Pelaaja> p) {
+    public Tekstikayttoliittyma() {
         this.lukija = new Lukija();
     }
+
 
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja p) {

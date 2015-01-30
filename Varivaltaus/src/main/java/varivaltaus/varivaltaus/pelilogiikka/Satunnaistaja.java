@@ -1,5 +1,6 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -16,5 +17,9 @@ public class Satunnaistaja {
 
     public int satunnaisLuku(int suurinMahd) {
         return this.random.nextInt(suurinMahd) + 1;
+    }
+    
+    public int satunnainenJoukosta(ArrayList<Integer> luvut) {
+        return luvut.get(satunnaisLuku(luvut.size() - 1));
     }
 }

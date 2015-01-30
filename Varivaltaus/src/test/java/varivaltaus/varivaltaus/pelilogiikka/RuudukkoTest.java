@@ -21,16 +21,9 @@ public class RuudukkoTest {
 
     @Before
     public void setUp() {
-        ruutu = new Ruutu(1,1,1);
+        ruutu = new Ruutu(1, 1, 1);
     }
 
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
     @Test
     public void konstruktoriLuoOikeanLevyisenRuudukon() {
         Ruudukko r = new Ruudukko(30, 20, 5);
@@ -98,8 +91,6 @@ public class RuudukkoTest {
         Assert.assertTrue(Arrays.equals(haluttu, kohdatutVarit));
     }
 
-
-    
     @Test
     public void ruutujaEiVoiSetataUudelleenRuudukonLuomisenJälkeen() {
         Ruudukko r = new Ruudukko(30, 20, 5);

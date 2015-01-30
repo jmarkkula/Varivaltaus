@@ -1,9 +1,5 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,20 +9,30 @@ import static org.junit.Assert.*;
  */
 public class PelinalustajaTest {
 
-    PelinalustajaTest pa;
-
-    @Before
-    public void setUp() {
-        pa = new PelinalustajaTest();
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-    // Testit
     @Test
-    public void hello() {
-
+    public void pelaajatSaavatEriVarit1() {
+        Pelinalustaja pa = new Pelinalustaja(5, 5, 5);
+        assertTrue(pa.getPelaajat().getFirst().getNykyinenVari() != pa.getPelaajat().getLast().getNykyinenVari());
     }
+
+    @Test
+    public void pelaajatSaavatEriVarit2() {
+        Pelinalustaja pa = new Pelinalustaja(5, 5, 3);
+        assertTrue(pa.getPelaajat().getFirst().getNykyinenVari() != pa.getPelaajat().getLast().getNykyinenVari());
+    }
+
+    @Test
+    public void pelaajatSaavatEriVarit3() {
+        Pelinalustaja pa = new Pelinalustaja(5, 5, 10);
+        assertTrue(pa.getPelaajat().getFirst().getNykyinenVari() != pa.getPelaajat().getLast().getNykyinenVari());
+    }
+
+    @Test
+    public void pelaajatValtaavatAloitusruutunsa() {
+        Pelinalustaja pa = new Pelinalustaja(5, 5, 5);
+        for (Pelaaja p : pa.getPelaajat()) {
+            assertTrue(p.getAlueenKoko() > 0);
+        }
+    }
+
 }

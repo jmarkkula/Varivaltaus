@@ -5,32 +5,55 @@
  */
 package varivaltaus.varivaltaus.pelilogiikka;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author juma
  */
 public class PelinpyorittajaTest {
-   
-    
+
+    private Pelinalustaja pa;
+    private Testauskayttoliittyma testiUI;
+
     @Before
     public void setUp() {
-        
-        
-    }
-    
-    @After
-    public void tearDown() {
+        pa = new Pelinalustaja(5, 5, 5);
+        testiUI = new Testauskayttoliittyma();
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    
-    
-     @Test
-     public void po() {}
+    @Test
+    public void pelinVoittaaOikeaVoittaja() {
+        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), testiUI);
+        pp.aloitaPeli();
+
+        Pelaaja kenenPitaisiVoittaa = pa.getPelaajat().getFirst();
+
+        if (pa.getPelaajat().getLast().getAlueenKoko() > kenenPitaisiVoittaa.getAlueenKoko()) {
+            kenenPitaisiVoittaa = pa.getPelaajat().getLast();
+        }
+
+        assertEquals(testiUI.voittaja, kenenPitaisiVoittaa);
+
+    }
+
+/*
+    @Test
+    public void vuorotJaetaanOikein() {
+        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), testiUI);
+        pp.aloitaPeli();
+
+        Pelaaja edellinen = testiUI.vuorohistoria.get(0);
+        
+        for (int i = 1; i < testiUI.vuorohistoria.size(); i++) {
+            assertTrue(!testiUI.vuorohistoria.get(i).equals(edellinen));
+            edellinen = testiUI.vuorohistoria.get(i);
+        }
+    }
+
+*/
+
+
 }

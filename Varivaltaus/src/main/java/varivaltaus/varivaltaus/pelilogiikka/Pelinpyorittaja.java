@@ -41,12 +41,6 @@ public class Pelinpyorittaja {
         this.ui.julistaVoittaja(voittaja);
     }
 
-    private void annaSeuraavaVuoro() {
-        Pelaaja seuraava = this.pelaajat.removeFirst();
-        this.pelaajat.addLast(seuraava);
-        pelaaVuoro(seuraava);
-    }
-
     private void valtaaPelaajilleAloitusAlueet() {
         for (Pelaaja p : this.pelaajat) {
             this.valtaaUudetRuudut(p);
@@ -54,7 +48,13 @@ public class Pelinpyorittaja {
     }
 
     private boolean voittaako(Pelaaja p) {
-        return p.getAlueenKoko() >= (this.ruudukko.getRuutujenMaara() + 1) / 2; //tarkista meneekö puolellajakohommeli oikein
+        return p.getAlueenKoko() >= (this.ruudukko.getRuutujenMaara() + 1) / 2;
+    }
+
+    private void annaSeuraavaVuoro() {
+        Pelaaja seuraava = this.pelaajat.removeFirst();
+        this.pelaajat.addLast(seuraava);
+        pelaaVuoro(seuraava);
     }
 
     private void pelaaVuoro(Pelaaja p) {

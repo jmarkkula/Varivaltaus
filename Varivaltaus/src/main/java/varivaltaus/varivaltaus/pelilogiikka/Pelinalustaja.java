@@ -17,11 +17,11 @@ public class Pelinalustaja {
     }
 
     public Ruudukko getRuudukko() {
-        return ruudukko;
+        return this.ruudukko;
     }
 
     public LinkedList<Pelaaja> getPelaajat() {
-        return pelaajat;
+        return this.pelaajat;
     }
 
     private void luoPelaajat() {

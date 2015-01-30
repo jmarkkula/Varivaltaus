@@ -15,9 +15,9 @@ import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
  * @author juma
  */
 public interface Kayttoliittyma {
-    int kysyVari(List<Integer> varivaihtoehdot, Pelaaja p);
+    int kysyVari(List<Integer> varivaihtoehdot, Pelaaja keneltaKysytaan);
     
     void paivitaPelilauta(Ruudukko ruudukko, List<Pelaaja> pelaajat);
     
-    void julistaVoittaja(Pelaaja p);
+    void julistaVoittaja(Pelaaja voittaja);
 }
