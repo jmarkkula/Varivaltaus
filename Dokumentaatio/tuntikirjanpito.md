@@ -20,8 +20,8 @@
 
 ####Viikko 3
 
-28.1. ohjelmointia 3h
-        uusi hieno luokkakaavio 30min
+28.1. ohjelmointia 3h   
+    uusi hieno luokkakaavio 30min
         
-29.1. ohjelmointia 6h, 
-        seonneen netbeansin kanssa raivoamista 2h
+29.1. ohjelmointia 6h,      
+    seonneen netbeansin kanssa raivoamista 2h
