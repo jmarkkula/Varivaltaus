@@ -25,3 +25,7 @@
         
 29.1. ohjelmointia 6h,      
     seonneen netbeansin kanssa raivoamista 2h
+
+####Viikko 4
+
+2.2. swingin ja javafx:n googlailua, javafx tutoriaalien lueskelua 1.5h
