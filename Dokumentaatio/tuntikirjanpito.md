@@ -32,3 +32,5 @@
 
 3.2. pohdiskelua, swingin opiskelua 1h,		
 	gui:n ohjelmointia 4h
+
+4.2. koodin säätöä ja javadoc-kommenttien kirjoittelua 2.5h
