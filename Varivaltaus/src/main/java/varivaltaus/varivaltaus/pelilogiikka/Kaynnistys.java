@@ -5,30 +5,46 @@ import varivaltaus.varivaltaus.kayttoliittyma.graafinen.GraafinenKayttoliittyma;
 import varivaltaus.varivaltaus.kayttoliittyma.teksti.Tekstikayttoliittyma;
 
 /**
+ * Main-luokka, käynnistää ohjelman suorituksen.
  *
  * @author juma
  */
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        // kaynnistaTekstiversio();
-        kaynnistaGraafinen();
+        kaynnistaGraafinenJaTeksti(30, 20, 5);
     }
 
-    private static void kaynnistaGraafinen() {
-        Pelinalustaja pa = new Pelinalustaja(10, 6, 5); //valitse pelilaudan koko 
+    /**
+     * Käynnistää pelin niin, että sekä graafinen että tekstikäyttöliittymä
+     * pyörivät samanaikaisesti.
+     *
+     * @param leveys Peliruudukon leveys.
+     * @param korkeus Peliruudukon korkeus.
+     * @param variLkm Montako eri väriä peliin halutaan.
+     */
+    private static void kaynnistaGraafinenJaTeksti(int leveys, int korkeus, int variLkm) {
+        Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
         GraafinenKayttoliittyma gui = new GraafinenKayttoliittyma(pa.getRuudukko());
-        SwingUtilities.invokeLater(gui);
-
         Tekstikayttoliittyma ui = new Tekstikayttoliittyma();
+
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
 
+        SwingUtilities.invokeLater(gui);
         pp.aloitaPeli();
 
     }
 
-    private static void kaynnistaTekstiversio() {
-        Pelinalustaja pa = new Pelinalustaja(4, 3, 5); //valitse pelilaudan koko
+    /**
+     * Käynnistää pelin tekstikäyttöliittymän kanssa. "Värejä" edustavat
+     * kokonaisluvut.
+     *
+     * @param leveys Peliruudukon leveys.
+     * @param korkeus Peliruudukon korkeus.
+     * @param variLkm Montako eri väriä peliin halutaan.
+     */
+    private static void kaynnistaTekstiversio(int leveys, int korkeus, int variLkm) {
+        Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
         Tekstikayttoliittyma ui = new Tekstikayttoliittyma();
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
 

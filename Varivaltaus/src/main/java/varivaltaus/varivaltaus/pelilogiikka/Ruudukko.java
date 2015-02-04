@@ -3,6 +3,7 @@ package varivaltaus.varivaltaus.pelilogiikka;
 import java.util.ArrayList;
 
 /**
+ * Peliruudukon generoiva luokka.
  *
  * @author juma
  */
@@ -10,8 +11,15 @@ public class Ruudukko {
 
     private final Ruutu[][] ruudut;
     private final int variLkm;
-    private Satunnaistaja s;
+    private final Satunnaistaja s;
 
+    /**
+     * Generoi satunnaisen värisiä ruutuja sisältävän ruudukon.
+     *
+     * @param leveys Ruudukon leveys.
+     * @param korkeus Ruudukon korkeus.
+     * @param variLkm Kuinka monta eri väriä ruudukkoon halutaan.
+     */
     public Ruudukko(int leveys, int korkeus, int variLkm) {
         this.variLkm = variLkm;
         this.ruudut = new Ruutu[korkeus][leveys];
@@ -36,10 +44,25 @@ public class Ruudukko {
         }
     }
 
+    /**
+     * Palauttaa ruudun pyydetyistä ruudukon koordinaateista.
+     *
+     * @param x Leveys-koordinaatti, kasvaa vasemmalta oikealle.
+     * @param y Korkeus-koordinaatti, kasvaa ylhäältä alaspäin.
+     * @return viite haluttuun Ruutu-olioon
+     */
     public Ruutu getRuutu(int x, int y) {
         return this.ruudut[y][x];
     }
 
+    /**
+     * Palauttaa halutun ruudun sivunaapurit, eli yllä, alla ja sivuilla
+     * molemmin puolin mahdollisesti olevat ruudut.
+     *
+     * @param x Leveys-koordinaatti, kasvaa vasemmalta oikealle.
+     * @param y Korkeus-koordinaatti, kasvaa ylhäältä alaspäin.
+     * @return Viitteet naapuriruutuihin ArrayListissä.
+     */
     public ArrayList<Ruutu> getViereisetRuudut(int x, int y) {
         ArrayList<Ruutu> viereiset = new ArrayList<>();
 
@@ -62,6 +85,16 @@ public class Ruudukko {
         return viereiset;
     }
 
+    /**
+     * Asettaa annetun Ruudun ruudukkoon, haluttuun kohtaan, jos siinä ei ole jo
+     * toista Ruutua.
+     *
+     * @param x Leveys-koordinaatti, kasvaa vasemmalta oikealle.
+     * @param y Korkeus-koordinaatti, kasvaa ylhäältä alaspäin.
+     * @param r Ruutu joka halutaan asettaa annettuihin koordinaatteihin.
+     * @return True jos koordinaatti oli tyhjä ja annettu Ruutu asetettiin
+     * siihen, false jos ruudussa oli jo toinen Ruutu.
+     */
     public boolean setRuutu(int x, int y, Ruutu r) {
         if (this.ruudut[y][x] != null) {
             return false;
@@ -70,22 +103,41 @@ public class Ruudukko {
         return true;
     }
 
+    /**
+     * @return Montako saraketta ruudukossa on.
+     */
     public int getLeveys() {
         return this.ruudut[0].length;
     }
 
+    /**
+     * @return Montako riviä ruudukossa on.
+     */
     public int getKorkeus() {
         return this.ruudut.length;
     }
 
+    /**
+     * @return Montako ruutua ruudukossa on.
+     */
     public int getRuutujenMaara() {
         return this.ruudut.length * this.ruudut[0].length;
     }
 
+    /**
+     * @return Montako eri väriä ruudukossa on.
+     */
     public int getVariLkm() {
         return this.variLkm;
     }
 
+    /**
+     * Vaihtoehto toStringille, yksinkertaisempi ulkoasu jossa vain pelaamiseen
+     * tarvittava informaatio ruudukosta, sopii tekstikäyttöliittymään.
+     *
+     * @return String jossa "kuva" ruudukosta senhetkisen pelitilanteen
+     * mukaisesti.
+     */
     public String yksinkertainenString() {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < this.ruudut.length; y++) {

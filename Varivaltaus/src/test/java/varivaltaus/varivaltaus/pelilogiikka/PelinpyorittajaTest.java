@@ -5,7 +5,6 @@
  */
 package varivaltaus.varivaltaus.pelilogiikka;
 
-import varivaltaus.varivaltaus.kayttoliittyma.Testauskayttoliittyma;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -17,12 +16,12 @@ import static org.junit.Assert.*;
 public class PelinpyorittajaTest {
 
     private Pelinalustaja pa;
-    private Testauskayttoliittyma testiUI;
+    private Logiikantestauskayttoliittyma testiUI;
 
     @Before
     public void setUp() {
         pa = new Pelinalustaja(5, 5, 5);
-        testiUI = new Testauskayttoliittyma();
+        testiUI = new Logiikantestauskayttoliittyma();
     }
 
     /*

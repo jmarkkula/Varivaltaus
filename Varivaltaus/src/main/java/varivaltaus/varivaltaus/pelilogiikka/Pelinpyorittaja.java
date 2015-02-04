@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import varivaltaus.varivaltaus.kayttoliittyma.*;
 
 /**
+ * Käynnistää ja pyörittää pelisession alusta loppuun.
  *
  * @author juma
  */
@@ -15,6 +16,13 @@ public class Pelinpyorittaja {
     private final Kayttoliittyma ui;
     private final int variLkm;
 
+    /**
+     * Tallentaa pelin pyörittämiseen tarvittavat olioviitteet.
+     *
+     * @param ruudukko Pelisessiossa käytettävä ruudukko.
+     * @param pelaajat Pelisession pelaajat.
+     * @param ui Pelisession käyttöliittymä.
+     */
     public Pelinpyorittaja(Ruudukko ruudukko, LinkedList<Pelaaja> pelaajat, Kayttoliittyma ui) {
         this.ruudukko = ruudukko;
         this.variLkm = ruudukko.getVariLkm();
@@ -22,6 +30,12 @@ public class Pelinpyorittaja {
         this.ui = ui;
     }
 
+    /**
+     * Käynnistää pelinpyörityksen. Kysyy käyttöliittymältä pelaajien uusia
+     * värejä pelaajilta vuoronperään sekä päivittää pelilaudan sisällön ja
+     * pyytää käyttöliittymää päivittämään pelilautanäkymän, lopuksi pyytää
+     * käyttöliittymää julistamaan voittajan.
+     */
     public void aloitaPeli() {
         valtaaPelaajilleAloitusAlueet();
 

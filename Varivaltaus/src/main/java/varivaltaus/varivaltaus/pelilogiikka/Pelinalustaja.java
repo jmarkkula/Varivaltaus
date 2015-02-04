@@ -3,23 +3,41 @@ package varivaltaus.varivaltaus.pelilogiikka;
 import java.util.LinkedList;
 
 /**
+ * Luokka alustaa ja säilyttää pelissä käytettävän peliruudukon ja pelaajat.
  *
- * @author juma
  */
 public class Pelinalustaja {
 
     private final Ruudukko ruudukko;
     private LinkedList<Pelaaja> pelaajat;
 
+    /**
+     * Konstruktori generoi ruudukon, luo pelaajat ja asettaa pelaajat
+     * aloitusalueilleen.
+     *
+     * @param leveys Ruudukon leveys.
+     * @param korkeus Ruudukon korkeus.
+     * @param variLkm Peliin haluttu eri värien määrä.
+     */
     public Pelinalustaja(int leveys, int korkeus, int variLkm) {
         this.ruudukko = new Ruudukko(leveys, korkeus, variLkm);
         this.luoPelaajat();
     }
 
+    /**
+     * Palauttaa viitteen pelin ruudukkoon.
+     *
+     * @return Viite Ruudukkoon.
+     */
     public Ruudukko getRuudukko() {
         return this.ruudukko;
     }
 
+    /**
+     * Palauttaa listan pelin pelaaja-olioista.
+     *
+     * @return Pelaajat LinkedListissä.
+     */
     public LinkedList<Pelaaja> getPelaajat() {
         return this.pelaajat;
     }
