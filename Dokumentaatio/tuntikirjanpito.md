@@ -20,4 +20,12 @@
 
 ####Viikko 3
 
-28.1. ohjelmointia 3h
+28.1. ohjelmointia 3h   
+    uusi hieno luokkakaavio 30min
+        
+29.1. ohjelmointia 6h,      
+    seonneen netbeansin kanssa raivoamista 2h
+
+####Viikko 4
+
+2.2. swingin ja javafx:n googlailua, javafx tutoriaalien lueskelua 1.5h
