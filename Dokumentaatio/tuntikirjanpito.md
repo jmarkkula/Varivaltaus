@@ -31,4 +31,4 @@
 2.2. swingin ja javafx:n googlailua, javafx tutoriaalien lueskelua 1.5h
 
 3.2. pohdiskelua, swingin opiskelua 1h,		
-	gui:n aloitus 4h
+	gui:n ohjelmointia 4h
