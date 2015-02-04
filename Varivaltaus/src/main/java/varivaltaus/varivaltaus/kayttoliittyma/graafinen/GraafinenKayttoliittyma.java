@@ -58,6 +58,7 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
     @Override
     public void paivitaPelilauta(Ruudukko ruudukko, List<Pelaaja> pelaajat) {
         this.pelilauta.paivita(); //ei toimi kuin vasta ikkuna-resizen jälkeen
+        frame.repaint();
     }
 
     @Override
