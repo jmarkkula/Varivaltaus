@@ -56,17 +56,19 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
 
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja keneltaKysytaan) {
-        throw new UnsupportedOperationException("Ei ole tehty vielä."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Ei ole tehty vielä."); 
     }
 
     @Override
     public void paivitaPelilauta() {
         this.pelilauta.paivita();
+        frame.revalidate();
+        frame.repaint();
     }
 
     @Override
     public void julistaVoittaja(Pelaaja voittaja) {
-        throw new UnsupportedOperationException("Ei ole tehty vielä."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Ei ole tehty vielä."); 
     }
 
 }
