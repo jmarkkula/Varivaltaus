@@ -10,21 +10,21 @@
 ####Viikko 2
 
 20.1. gitin kanssa taistelua/ maven-projektin uudelleenluominen... 1h		
-		luokkakaavio ja koodailun aloittelua 2h
+	luokkakaavio ja koodailun aloittelua 2h
 
 21.1. koodausta 1.5h
 
 22.1. ohjelmointia, testien duunausta 2.5h		
-		lisää ohjelmointia&testejä, pitin ja coberturan kanssa leikkimistä, dokumentaatiota repoon, vähän löysästi 4h
+	lisää ohjelmointia&testejä, pitin ja coberturan kanssa leikkimistä, dokumentaatiota repoon, vähän löysästi 4h
     
 
 ####Viikko 3
 
 28.1. ohjelmointia 3h		
-		uusi hieno luokkakaavio 30min
+	uusi hieno luokkakaavio 30min
         
 29.1. ohjelmointia 6h,		
-		seonneen netbeansin kanssa raivoamista 2h
+	seonneen netbeansin kanssa raivoamista 2h
 
 ####Viikko 4
 
@@ -34,3 +34,5 @@
 	gui:n ohjelmointia 4h
 
 4.2. koodin säätöä ja javadoc-kommenttien kirjoittelua 2.5h
+
+5.2. testejä, käyttöliittymän ihmettelyä 4.5h
