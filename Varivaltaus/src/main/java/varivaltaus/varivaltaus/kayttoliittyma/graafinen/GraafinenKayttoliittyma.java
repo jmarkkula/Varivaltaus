@@ -59,6 +59,7 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
         throw new UnsupportedOperationException("Ei ole tehty vielä."); 
     }
 
+    //Tällä hetkellä pelilauta ei päivity, ellei ikkunaa vedä välillä hiirellä erikokoiseksi.
     @Override
     public void paivitaPelilauta() {
         this.pelilauta.paivita();
