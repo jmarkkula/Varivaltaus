@@ -44,8 +44,6 @@ public class Pelinpyorittaja implements ActionListener {
         Pelaaja voittaja = null;
 
         while (voittaja == null) {
-            this.ui.paivitaPelilauta();
-
             annaSeuraavaVuoro();
 
             if (this.voittaako(this.pelaajat.peekLast())) {
@@ -74,13 +72,12 @@ public class Pelinpyorittaja implements ActionListener {
     }
 
     private void pelaaVuoro(Pelaaja p) {
-        int vari = kysyVaria(vapaatVarit(), p);
+        int vari = this.ui.kysyVari(vapaatVarit(), p);
+        
         p.vaihdaVari(vari);
         this.valtaaUudetRuudut(p);
-    }
-
-    private int kysyVaria(ArrayList<Integer> vapaatVarit, Pelaaja p) {
-        return this.ui.kysyVari(vapaatVarit, p);
+        
+        this.ui.paivitaPelilauta();
     }
 
     private ArrayList<Integer> vapaatVarit() {
