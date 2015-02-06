@@ -1,7 +1,5 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import varivaltaus.varivaltaus.kayttoliittyma.*;
@@ -11,7 +9,7 @@ import varivaltaus.varivaltaus.kayttoliittyma.*;
  *
  * @author juma
  */
-public class Pelinpyorittaja implements ActionListener {
+public class Pelinpyorittaja {
 
     private final Ruudukko ruudukko;
     private final LinkedList<Pelaaja> pelaajat;
@@ -123,12 +121,4 @@ public class Pelinpyorittaja implements ActionListener {
         }
 
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-
 }
