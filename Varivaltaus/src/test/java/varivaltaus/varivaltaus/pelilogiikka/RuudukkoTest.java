@@ -1,7 +1,7 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -15,9 +15,6 @@ import org.junit.Assert;
 public class RuudukkoTest {
 
     private Ruutu ruutu;
-
-    public RuudukkoTest() {
-    }
 
     @Before
     public void setUp() {
@@ -92,10 +89,29 @@ public class RuudukkoTest {
     }
 
     @Test
-    public void ruutujaEiVoiSetataUudelleenRuudukonLuomisenJälkeen() {
-        Ruudukko r = new Ruudukko(30, 20, 5);
+    public void getViereisetPalauttaaOikeatRuudutNaapurilliselle() {
+        Ruudukko r = new Ruudukko(3, 3, 5);
+        int x = 1;
+        int y = 1;
 
-        assertFalse(r.setRuutu(1, 2, ruutu));
+        ArrayList<Ruutu> naapurit = new ArrayList<>();
+
+        naapurit.add(r.getRuutu(0, 1));
+        naapurit.add(r.getRuutu(1, 0));
+        naapurit.add(r.getRuutu(2, 1));
+        naapurit.add(r.getRuutu(1, 2));
+
+        ArrayList<Ruutu> viereiset = r.getViereisetRuudut(x, y);
+
+        assertTrue(naapurit.containsAll(viereiset) && viereiset.containsAll(naapurit));
+    }
+
+    @Test
+    public void getViereisetPalauttaaTyhjanNaapurittomalle() {
+        Ruudukko r = new Ruudukko(1, 1, 5);
+        ArrayList<Ruutu> viereiset = r.getViereisetRuudut(0, 0);
+
+        assertTrue(viereiset.isEmpty());
     }
 
 }

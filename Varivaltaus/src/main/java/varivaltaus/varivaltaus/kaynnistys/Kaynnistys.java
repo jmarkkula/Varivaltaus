@@ -1,18 +1,20 @@
-package varivaltaus.varivaltaus.pelilogiikka;
+package varivaltaus.varivaltaus.kaynnistys;
 
 import javax.swing.SwingUtilities;
 import varivaltaus.varivaltaus.kayttoliittyma.graafinen.GraafinenKayttoliittyma;
 import varivaltaus.varivaltaus.kayttoliittyma.teksti.Tekstikayttoliittyma;
+import varivaltaus.varivaltaus.pelilogiikka.Pelinalustaja;
+import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
 
 /**
- * Main-luokka, käynnistää ohjelman suorituksen.
+ * Main-luokka, käynnistää pelin.
  *
  * @author juma
  */
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        kaynnistaGraafinenJaTeksti(30, 20, 5);
+        kaynnistaGraafinenJaTeksti(10, 7, 5);
     }
 
     /**
@@ -26,17 +28,26 @@ public class Kaynnistys {
     private static void kaynnistaGraafinenJaTeksti(int leveys, int korkeus, int variLkm) {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
         GraafinenKayttoliittyma gui = new GraafinenKayttoliittyma(pa.getRuudukko());
-        Tekstikayttoliittyma ui = new Tekstikayttoliittyma();
+        Tekstikayttoliittyma ui = new Tekstikayttoliittyma(pa.getRuudukko(), pa.getPelaajat());
 
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
 
         SwingUtilities.invokeLater(gui);
+
+        while (gui.getPelilauta() == null) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                System.out.println("Pelilautaa ei ole vielä luotu.");
+            }
+        }
+
         pp.aloitaPeli();
 
     }
 
     /**
-     * Käynnistää pelin tekstikäyttöliittymän kanssa. "Värejä" edustavat
+     * Käynnistää pelin tekstikäyttöliittymän kanssa. Värejä edustavat
      * kokonaisluvut.
      *
      * @param leveys Peliruudukon leveys.
@@ -45,7 +56,7 @@ public class Kaynnistys {
      */
     private static void kaynnistaTekstiversio(int leveys, int korkeus, int variLkm) {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
-        Tekstikayttoliittyma ui = new Tekstikayttoliittyma();
+        Tekstikayttoliittyma ui = new Tekstikayttoliittyma(pa.getRuudukko(), pa.getPelaajat());
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
 
         pp.aloitaPeli();

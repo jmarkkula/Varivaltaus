@@ -1,5 +1,6 @@
 package varivaltaus.varivaltaus.kayttoliittyma.teksti;
 
+import java.util.LinkedList;
 import java.util.List;
 import varivaltaus.varivaltaus.kayttoliittyma.Kayttoliittyma;
 import varivaltaus.varivaltaus.pelilogiikka.*;
@@ -11,9 +12,13 @@ import varivaltaus.varivaltaus.pelilogiikka.*;
 public class Tekstikayttoliittyma implements Kayttoliittyma {
 
     private final Lukija lukija;
+    private final Ruudukko ruudukko;
+    private final LinkedList<Pelaaja> pelaajat;
 
-    public Tekstikayttoliittyma() {
+    public Tekstikayttoliittyma(Ruudukko r, LinkedList<Pelaaja> p) {
         this.lukija = new Lukija();
+        this.ruudukko = r;
+        this.pelaajat=p;
     }
 
 
@@ -36,7 +41,7 @@ public class Tekstikayttoliittyma implements Kayttoliittyma {
     }
 
     @Override
-    public void paivitaPelilauta(Ruudukko ruudukko, List<Pelaaja> pelaajat) {
+    public void paivitaPelilauta() {
         System.out.println("Pelilauta:");
         System.out.println(ruudukko.yksinkertainenString());
 

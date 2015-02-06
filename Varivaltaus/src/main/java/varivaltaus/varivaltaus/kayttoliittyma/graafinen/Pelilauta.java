@@ -35,7 +35,6 @@ public class Pelilauta extends JPanel {
         }
     }
 
-    //super.paintcomonent juttuja tai jotain`tarvii?
     void paivita() {
         for(Variruutu v: this.variruudut) {
             v.revalidate();

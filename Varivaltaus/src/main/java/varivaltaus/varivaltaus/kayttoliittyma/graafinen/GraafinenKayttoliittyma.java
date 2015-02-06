@@ -49,6 +49,10 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
     public JFrame getFrame() {
         return frame;
     }
+    
+    public JPanel getPelilauta() {
+        return this.pelilauta;
+    }
 
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja keneltaKysytaan) {
@@ -56,9 +60,8 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
     }
 
     @Override
-    public void paivitaPelilauta(Ruudukko ruudukko, List<Pelaaja> pelaajat) {
-        this.pelilauta.paivita(); //ei toimi kuin vasta ikkuna-resizen jälkeen
-        frame.repaint();
+    public void paivitaPelilauta() {
+        this.pelilauta.paivita();
     }
 
     @Override

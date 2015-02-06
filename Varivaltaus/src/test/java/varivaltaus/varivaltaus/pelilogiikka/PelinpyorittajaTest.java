@@ -24,9 +24,7 @@ public class PelinpyorittajaTest {
         testiUI = new Logiikantestauskayttoliittyma();
     }
 
-    /*
-    Nää junnaa koska testauskäyttöliittymä ei oikein skulaa vielä :(
-    
+  
     
     @Test
     public void pelinVoittaaOikeaVoittaja() {
@@ -49,15 +47,18 @@ public class PelinpyorittajaTest {
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), testiUI);
         pp.aloitaPeli();
 
-        Pelaaja edellinen = testiUI.vuorohistoria.get(0);
+        int edellinen = testiUI.vuorot.pollFirst();
         
-        for (int i = 1; i < testiUI.vuorohistoria.size(); i++) {
-            assertTrue(!testiUI.vuorohistoria.get(i).equals(edellinen));
-            edellinen = testiUI.vuorohistoria.get(i);
+        int nykyinen;
+        
+        for (int i = 0; i < testiUI.vuorot.size(); i++) {
+            nykyinen=testiUI.vuorot.pollFirst();
+            assertTrue(edellinen!=nykyinen);
+            edellinen=nykyinen;
         }
     }
 
-*/
+
 
 
 }

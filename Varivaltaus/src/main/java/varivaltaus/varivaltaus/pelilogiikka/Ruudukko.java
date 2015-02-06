@@ -31,10 +31,14 @@ public class Ruudukko {
         for (int y = 0; y < this.ruudut.length; y++) {
             for (int x = 0; x < this.ruudut[0].length; x++) {
                 Ruutu r = new Ruutu(this.s.satunnaisLuku(variLkm), x, y);
-                this.setRuutu(x, y, r);
+                this.ruudut[y][x] = r;
             }
         }
 
+        aloitusruudutErivarisiksi();
+    }
+
+    private void aloitusruudutErivarisiksi() {
         if (this.ruudut[0][0].getVari() == this.ruudut[this.getKorkeus() - 1][this.getLeveys() - 1].getVari()) {
             int uusiVari = this.ruudut[0][0].getVari() + 1;
             if (uusiVari > variLkm) {
@@ -83,24 +87,6 @@ public class Ruudukko {
         }
 
         return viereiset;
-    }
-
-    /**
-     * Asettaa annetun Ruudun ruudukkoon, haluttuun kohtaan, jos siinä ei ole jo
-     * toista Ruutua.
-     *
-     * @param x Leveys-koordinaatti, kasvaa vasemmalta oikealle.
-     * @param y Korkeus-koordinaatti, kasvaa ylhäältä alaspäin.
-     * @param r Ruutu joka halutaan asettaa annettuihin koordinaatteihin.
-     * @return True jos koordinaatti oli tyhjä ja annettu Ruutu asetettiin
-     * siihen, false jos ruudussa oli jo toinen Ruutu.
-     */
-    public boolean setRuutu(int x, int y, Ruutu r) {
-        if (this.ruudut[y][x] != null) {
-            return false;
-        }
-        this.ruudut[y][x] = r;
-        return true;
     }
 
     /**

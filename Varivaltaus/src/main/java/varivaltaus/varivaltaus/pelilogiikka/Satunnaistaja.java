@@ -31,13 +31,13 @@ public class Satunnaistaja {
     }
 
     /**
-     * Valitsee satunnaisesti jonkin luvun annetusta kokonaislukuja sisältävästä
-     * listasta.
+     * Palauttaa satunnaisesti valitun luvun annetusta kokonaislukuja
+     * sisältävästä listasta.
      *
      * @param luvut Lista luvuista.
      * @return Satunnaisesti valittu luku.
      */
     public int satunnainenListasta(ArrayList<Integer> luvut) {
-        return luvut.get(satunnaisLuku(luvut.size() - 1));
+        return luvut.get(this.random.nextInt(luvut.size()));
     }
 }

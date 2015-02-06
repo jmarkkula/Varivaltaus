@@ -22,9 +22,7 @@ public class Variruutu extends JPanel {
         this.varit = v;
         this.ruutu = r;
     }
-
-    
-    //tää KAI Kunnossa?
+   
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -40,9 +38,4 @@ public class Variruutu extends JPanel {
         g.setColor(this.varit.getVari(this.ruutu.getVari()));
         g.fillRect(0, 0, leveys, korkeus);
     }
-
-    void paivita() {
-        repaint();
-    }
-
 }

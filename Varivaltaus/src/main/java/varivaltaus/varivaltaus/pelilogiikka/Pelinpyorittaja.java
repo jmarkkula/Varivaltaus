@@ -1,5 +1,7 @@
 package varivaltaus.varivaltaus.pelilogiikka;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import varivaltaus.varivaltaus.kayttoliittyma.*;
@@ -9,7 +11,7 @@ import varivaltaus.varivaltaus.kayttoliittyma.*;
  *
  * @author juma
  */
-public class Pelinpyorittaja {
+public class Pelinpyorittaja implements ActionListener {
 
     private final Ruudukko ruudukko;
     private final LinkedList<Pelaaja> pelaajat;
@@ -42,7 +44,7 @@ public class Pelinpyorittaja {
         Pelaaja voittaja = null;
 
         while (voittaja == null) {
-            this.ui.paivitaPelilauta(this.ruudukko, this.pelaajat);
+            this.ui.paivitaPelilauta();
 
             annaSeuraavaVuoro();
 
@@ -51,7 +53,7 @@ public class Pelinpyorittaja {
             }
         }
 
-        this.ui.paivitaPelilauta(this.ruudukko, this.pelaajat);
+        this.ui.paivitaPelilauta();
         this.ui.julistaVoittaja(voittaja);
     }
 
@@ -124,5 +126,12 @@ public class Pelinpyorittaja {
         }
 
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
 }
