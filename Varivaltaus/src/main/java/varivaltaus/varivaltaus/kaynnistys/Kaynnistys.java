@@ -34,14 +34,6 @@ public class Kaynnistys {
 
         SwingUtilities.invokeLater(gui);
 
-        while (gui.getPelilauta() == null) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                System.out.println("Pelilautaa ei ole vielä luotu.");
-            }
-        }
-
         pp.aloitaPeli();
 
     }
