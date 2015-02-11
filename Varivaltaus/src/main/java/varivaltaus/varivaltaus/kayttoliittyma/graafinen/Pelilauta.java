@@ -25,12 +25,13 @@ public class Pelilauta extends JPanel {
 
         int n = 0;
 
-        for (int i = 0; i < r.getKorkeus(); i++) {
-            for (int j = 0; j < r.getLeveys(); j++) {
-                variruudut[i] = new Variruutu(r.getRuutu(j, i), v);
+        for (int y = 0; y < r.getKorkeus(); y++) {
+            for (int x = 0; x < r.getLeveys(); x++, n++) {
+                Variruutu uusi = new Variruutu(r.getRuutu(x, y), v);
+                
+                variruudut[n] = uusi;
 
-                add(variruudut[i]);
-                n++;
+                add(uusi);
             }
         }
     }

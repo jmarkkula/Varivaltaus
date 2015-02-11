@@ -51,8 +51,8 @@ public class Ruudukko {
     /**
      * Palauttaa ruudun pyydetyistä ruudukon koordinaateista.
      *
-     * @param x Leveys-koordinaatti, kasvaa vasemmalta oikealle.
-     * @param y Korkeus-koordinaatti, kasvaa ylhäältä alaspäin.
+     * @param x Leveys-koordinaatti, alkaa nollasta, kasvaa vasemmalta oikealle.
+     * @param y Korkeus-koordinaatti, alkaa nollasta, kasvaa ylhäältä alaspäin.
      * @return viite haluttuun Ruutu-olioon
      */
     public Ruutu getRuutu(int x, int y) {
@@ -63,8 +63,8 @@ public class Ruudukko {
      * Palauttaa halutun ruudun sivunaapurit, eli yllä, alla ja sivuilla
      * molemmin puolin mahdollisesti olevat ruudut.
      *
-     * @param x Leveys-koordinaatti, kasvaa vasemmalta oikealle.
-     * @param y Korkeus-koordinaatti, kasvaa ylhäältä alaspäin.
+     * @param x Leveys-koordinaatti, alkaa nollasta, kasvaa vasemmalta oikealle.
+     * @param y Korkeus-koordinaatti, alkaa nollasta, kasvaa ylhäältä alaspäin.
      * @return Viitteet naapuriruutuihin ArrayListissä.
      */
     public ArrayList<Ruutu> getViereisetRuudut(int x, int y) {
