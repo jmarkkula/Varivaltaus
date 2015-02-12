@@ -5,6 +5,7 @@
  */
 package varivaltaus.varivaltaus.kayttoliittyma.graafinen;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.util.List;
@@ -19,12 +20,15 @@ import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
  */
 public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
 
+    private final Ruudukko ruudukko;
+    private final Varit varit;
     private JFrame frame;
     private Pelilauta pelilauta;
-    private final Ruudukko ruudukko;
+    private Painikepaneeli painikepaneeli;
 
     public GraafinenKayttoliittyma(Ruudukko r) {
         this.ruudukko = r;
+        this.varit = new Varit();
     }
 
     @Override
@@ -41,22 +45,25 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
     }
 
     private void luoKomponentit(Container contentPane) {
-        Varit varit = new Varit();
-        this.pelilauta = new Pelilauta(this.ruudukko, varit);
+        contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
+        this.pelilauta = new Pelilauta(this.ruudukko, this.varit);
         contentPane.add(this.pelilauta);
+
+        this.painikepaneeli = new Painikepaneeli(this.ruudukko, this.varit);
+        contentPane.add(this.painikepaneeli);
     }
 
     public JFrame getFrame() {
         return frame;
     }
-    
+
     public JPanel getPelilauta() {
         return this.pelilauta;
     }
 
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja keneltaKysytaan) {
-        throw new UnsupportedOperationException("Ei ole tehty vielä."); 
+        return this.painikepaneeli.kysyVari(varivaihtoehdot);
     }
 
     //Tällä hetkellä pelilauta ei päivity, ellei ikkunaa vedä välillä hiirellä erikokoiseksi.
@@ -69,7 +76,7 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
 
     @Override
     public void julistaVoittaja(Pelaaja voittaja) {
-        throw new UnsupportedOperationException("Ei ole tehty vielä."); 
+        throw new UnsupportedOperationException("Ei ole tehty vielä.");
     }
 
 }

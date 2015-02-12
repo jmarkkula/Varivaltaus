@@ -41,5 +41,8 @@ public class Pelilauta extends JPanel {
             v.revalidate();
             v.repaint();
         }
+        
+        this.revalidate();
+        this.repaint();
       }
 }

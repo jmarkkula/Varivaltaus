@@ -18,7 +18,7 @@ public class Variruutu extends JPanel {
     private final Varit varit;
     private final Ruutu ruutu;
 
-    Variruutu(Ruutu r, Varit v) {
+    public Variruutu(Ruutu r, Varit v) {
         this.varit = v;
         this.ruutu = r;
     }
