@@ -18,24 +18,36 @@ public class Kaynnistys {
     }
 
     /**
-     * Käynnistää pelin niin, että sekä graafinen että tekstikäyttöliittymä
-     * pyörivät samanaikaisesti.
-     *
-     * @param leveys Peliruudukon leveys.
-     * @param korkeus Peliruudukon korkeus.
-     * @param variLkm Montako eri väriä peliin halutaan.
+     * TESTIHOMMA
      */
     private static void kaynnistaGraafinenJaTeksti(int leveys, int korkeus, int variLkm) {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
         GraafinenKayttoliittyma gui = new GraafinenKayttoliittyma(pa.getRuudukko());
         Tekstikayttoliittyma ui = new Tekstikayttoliittyma(pa.getRuudukko(), pa.getPelaajat());
 
-        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
+        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), gui);
 
         SwingUtilities.invokeLater(gui);
 
         pp.aloitaPeli();
 
+    }
+
+    /**
+     * Käynnistää pelin graafisen käyttöliittymän kanssa.
+     *
+     * @param leveys Peliruudukon leveys.
+     * @param korkeus Peliruudukon korkeus.
+     * @param variLkm Montako eri väriä peliin halutaan.
+     */
+    private static void kaynnistaGraafinen(int leveys, int korkeus, int variLkm) {
+        Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
+        GraafinenKayttoliittyma gui = new GraafinenKayttoliittyma(pa.getRuudukko());
+        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), gui);
+
+        SwingUtilities.invokeLater(gui);
+
+        pp.aloitaPeli();
     }
 
     /**

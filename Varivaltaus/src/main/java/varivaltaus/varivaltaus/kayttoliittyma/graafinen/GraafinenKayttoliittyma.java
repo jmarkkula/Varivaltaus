@@ -46,6 +46,7 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
 
     private void luoKomponentit(Container contentPane) {
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
+        
         this.pelilauta = new Pelilauta(this.ruudukko, this.varit);
         contentPane.add(this.pelilauta);
 

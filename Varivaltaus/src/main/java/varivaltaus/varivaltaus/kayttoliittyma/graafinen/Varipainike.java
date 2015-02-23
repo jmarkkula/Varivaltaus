@@ -21,7 +21,9 @@ public class Varipainike extends JButton{
         this.setBackground(this.varit.getVari(vari));
         
         //nappien koon määritys tässä vai paneelissa
-        
-        //lisää actionlistener tähän vai paneeliin
+    }
+    
+    public int getVari() {
+        return this.vari;
     }
 }

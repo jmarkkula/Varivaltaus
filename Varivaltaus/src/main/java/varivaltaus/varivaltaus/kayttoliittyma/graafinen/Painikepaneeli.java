@@ -19,29 +19,40 @@ import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 public class Painikepaneeli extends JPanel {
 
     private final HashMap<Integer, Varipainike> varipainikkeet;
+    private final VaripainikeKuuntelija kuuntelija;
 
     public Painikepaneeli(Ruudukko r, Varit v) {
         setLayout(new GridLayout(1, r.getVariLkm() - 2));
-
+        
+        this.kuuntelija = new VaripainikeKuuntelija();
+        
         this.varipainikkeet = new HashMap<>();
 
         for (int i = 1; i <= r.getVariLkm(); i++) {
             Varipainike uusi = new Varipainike(i, v);
+            uusi.addActionListener(kuuntelija);
+            
             this.varipainikkeet.put(i, uusi);
             this.add(uusi);
         }
+
     }
 
     public int kysyVari(List<Integer> varivaihtoehdot) {
+
         this.removeAll();
-        
-        for(int vari: varivaihtoehdot) {
+
+        for (int vari : varivaihtoehdot) {
             this.add(varipainikkeet.get(vari));
         }
-        
+
         this.revalidate();
         this.repaint();
         
+        while(!this.kuuntelija.onkoPainettu()) {
+            
+        }
+
         return 1; //VAIHDA LOPUKSI
     }
 

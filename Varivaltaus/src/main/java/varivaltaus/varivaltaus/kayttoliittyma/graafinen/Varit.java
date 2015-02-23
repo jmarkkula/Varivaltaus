@@ -25,6 +25,7 @@ public class Varit {
         if (!this.varit.containsKey(varinNumero)) {
             throw (new Error("Värejä ei ole luotu noin montaa Varit-luokassa"));
         }
+        
         return this.varit.get(varinNumero);
     }
 
