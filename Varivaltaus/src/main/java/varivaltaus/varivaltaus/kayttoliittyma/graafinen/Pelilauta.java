@@ -17,8 +17,7 @@ public class Pelilauta extends JPanel {
 
     private final Variruutu[] variruudut;
 
-    public Pelilauta(Ruudukko r, Varit v) {
-
+    protected Pelilauta(Ruudukko r, Varit v) {
         setLayout(new GridLayout(r.getKorkeus(), r.getLeveys()));
 
         this.variruudut = new Variruutu[r.getRuutujenMaara()];
@@ -35,14 +34,4 @@ public class Pelilauta extends JPanel {
             }
         }
     }
-
-    void paivita() {
-        for(Variruutu v: this.variruudut) {
-            v.revalidate();
-            v.repaint();
-        }
-        
-        this.revalidate();
-        this.repaint();
-      }
 }

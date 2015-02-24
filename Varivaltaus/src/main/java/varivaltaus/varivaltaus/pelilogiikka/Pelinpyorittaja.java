@@ -38,6 +38,7 @@ public class Pelinpyorittaja {
      */
     public void aloitaPeli() {
         valtaaPelaajilleAloitusAlueet();
+        this.ui.paivitaPelilauta();
 
         Pelaaja voittaja = null;
 
@@ -47,9 +48,10 @@ public class Pelinpyorittaja {
             if (this.voittaako(this.pelaajat.peekLast())) {
                 voittaja = this.pelaajat.getLast();
             }
+            
+            this.ui.paivitaPelilauta();
         }
 
-        this.ui.paivitaPelilauta();
         this.ui.julistaVoittaja(voittaja);
     }
 
@@ -74,8 +76,6 @@ public class Pelinpyorittaja {
         
         p.vaihdaVari(vari);
         this.valtaaUudetRuudut(p);
-        
-        this.ui.paivitaPelilauta();
     }
 
     private ArrayList<Integer> vapaatVarit() {

@@ -23,17 +23,6 @@ public class Tekstikayttoliittyma implements Kayttoliittyma {
 
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja pelaaja) {
-        System.out.println("Pelilauta:");
-        System.out.println(ruudukko.yksinkertainenString());
-
-        System.out.println();
-
-        for (Pelaaja p : pelaajat) {
-            System.out.println("Pelaajan " + p.getPelaajaNro() + ". väri: " + p.getNykyinenVari() + ", alueen koko: " + p.getAlueenKoko() + "/" + ruudukko.getRuutujenMaara());
-        }
-
-        System.out.println();
-
         int luku;
 
         while (true) {
@@ -52,11 +41,6 @@ public class Tekstikayttoliittyma implements Kayttoliittyma {
 
     @Override
     public void paivitaPelilauta() {
-
-    }
-
-    @Override
-    public void julistaVoittaja(Pelaaja voittaja) {
         System.out.println("Pelilauta:");
         System.out.println(ruudukko.yksinkertainenString());
 
@@ -67,6 +51,10 @@ public class Tekstikayttoliittyma implements Kayttoliittyma {
         }
 
         System.out.println();
+    }
+
+    @Override
+    public void julistaVoittaja(Pelaaja voittaja) {
         System.out.println("Pelaaja " + voittaja.getPelaajaNro() + ". on voittanut!");
     }
 

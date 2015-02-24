@@ -13,6 +13,8 @@ public class VaripainikeKuuntelija implements ActionListener {
     private int painettuVari;
 
     public VaripainikeKuuntelija() {
+        this.nappiaPainettu=false;
+        this.painettuVari=-666;
     }
 
     @Override
@@ -35,5 +37,4 @@ public class VaripainikeKuuntelija implements ActionListener {
     public boolean onkoPainettu() {
         return this.nappiaPainettu;
     }
-
 }
