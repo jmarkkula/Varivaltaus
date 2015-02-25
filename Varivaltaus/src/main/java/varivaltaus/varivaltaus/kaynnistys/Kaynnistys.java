@@ -2,7 +2,7 @@ package varivaltaus.varivaltaus.kaynnistys;
 
 import javax.swing.SwingUtilities;
 import varivaltaus.varivaltaus.kayttoliittyma.graafinen.GraafinenKayttoliittyma;
-import varivaltaus.varivaltaus.kayttoliittyma.graafinen.GraafinenTesti;
+import varivaltaus.varivaltaus.kayttoliittyma.graafinen.GraafinenKayttoliittymaDebug;
 import varivaltaus.varivaltaus.kayttoliittyma.teksti.Tekstikayttoliittyma;
 import varivaltaus.varivaltaus.pelilogiikka.Pelinalustaja;
 import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
@@ -15,22 +15,22 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        kaynnistaGraafinenTesti(10, 6, 5);
+        kaynnistaGraafinenDebug(10, 6, 5);
     }
 
     /**
      * Tarkoitettu graafisen käyttöliittymän oikean toiminnan testaukseen:
      * printtaa pelin tilanteen kehittymiset tekstikäyttöliittymä-tyyliin sekä
-     * ilmoitukset siitä, mitä metodeja graafisessa käyttöliittymässä missäkin
-     * välissä kutsutaan.
+     * ilmoitukset siitä, mitä graafisen käyttöliittymän metodeja pelilogiikka
+     * missäkin välissä kutsuu..
      *
      * @param leveys Peliruudukon leveys.
      * @param korkeus Peliruudukon korkeus.
      * @param variLkm Montako eri väriä peliin halutaan.
      */
-    private static void kaynnistaGraafinenTesti(int leveys, int korkeus, int variLkm) {
+    private static void kaynnistaGraafinenDebug(int leveys, int korkeus, int variLkm) {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
-        GraafinenTesti gui = new GraafinenTesti(pa.getRuudukko(), pa.getPelaajat());
+        GraafinenKayttoliittymaDebug gui = new GraafinenKayttoliittymaDebug(pa);
 
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), gui);
 
@@ -57,7 +57,7 @@ public class Kaynnistys {
      */
     private static void kaynnistaGraafinen(int leveys, int korkeus, int variLkm) {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
-        GraafinenKayttoliittyma gui = new GraafinenKayttoliittyma(pa.getRuudukko());
+        GraafinenKayttoliittyma gui = new GraafinenKayttoliittyma(pa);
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), gui);
 
         SwingUtilities.invokeLater(gui);

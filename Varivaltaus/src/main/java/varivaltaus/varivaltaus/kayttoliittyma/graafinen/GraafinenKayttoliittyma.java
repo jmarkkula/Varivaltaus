@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.*;
 import varivaltaus.varivaltaus.kayttoliittyma.Kayttoliittyma;
 import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
+import varivaltaus.varivaltaus.pelilogiikka.Pelinalustaja;
 import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 /**
@@ -27,8 +28,8 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
     private Pelilauta pelilauta;
     private Painikepaneeli painikepaneeli;
 
-    public GraafinenKayttoliittyma(Ruudukko r) {
-        this.ruudukko = r;
+    public GraafinenKayttoliittyma(Pelinalustaja pa) {
+        this.ruudukko = pa.getRuudukko();
         this.varit = new Varit();
     }
 
@@ -51,12 +52,19 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
         this.pelilauta = new Pelilauta(this.ruudukko, this.varit);
         contentPane.add(this.pelilauta);
 
-        JPanel paneelit = new JPanel(new GridLayout(1, 1)); //2,1 sit ku tietopaneeli mukana
+        JPanel paneelit = luoAlapaneelit();
+        contentPane.add(paneelit, BorderLayout.SOUTH);
+    }
+
+    private JPanel luoAlapaneelit() {
+        JPanel paneelit = new JPanel(new GridLayout(1, 1));
         
         this.painikepaneeli = new Painikepaneeli(this.ruudukko, this.varit);
         paneelit.add(this.painikepaneeli);
         
-        contentPane.add(paneelit, BorderLayout.SOUTH);
+        //luo statuspaneeli
+        
+        return paneelit;
     }
 
     public boolean onkoValmisPelinAloitukseen() {
