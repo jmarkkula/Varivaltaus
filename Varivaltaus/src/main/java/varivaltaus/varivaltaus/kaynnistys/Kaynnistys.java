@@ -15,11 +15,18 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        kaynnistaGraafinenTesti(30, 20, 5);
+        kaynnistaGraafinenTesti(10, 6, 5);
     }
 
     /**
-     * TESTIHOMMA
+     * Tarkoitettu graafisen käyttöliittymän oikean toiminnan testaukseen:
+     * printtaa pelin tilanteen kehittymiset tekstikäyttöliittymä-tyyliin sekä
+     * ilmoitukset siitä, mitä metodeja graafisessa käyttöliittymässä missäkin
+     * välissä kutsutaan.
+     *
+     * @param leveys Peliruudukon leveys.
+     * @param korkeus Peliruudukon korkeus.
+     * @param variLkm Montako eri väriä peliin halutaan.
      */
     private static void kaynnistaGraafinenTesti(int leveys, int korkeus, int variLkm) {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);

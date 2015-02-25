@@ -25,13 +25,13 @@ public class VaripainikeKuuntelija implements ActionListener {
         this.nappiaPainettu = true;
     }
 
-    public int kasittelePainanta() {
+    public int kasittelePainanta() throws Exception {
         if (this.nappiaPainettu) {
             this.nappiaPainettu = false;
             return this.painettuVari;
+        } else {
+            throw new Exception("Kutsuttiin kasittelePainanta() kun nappia ei oltu painettu.");
         }
-
-        return -666;
     }
 
     public boolean onkoPainettu() {

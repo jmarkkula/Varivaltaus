@@ -3,6 +3,7 @@
 (viikovaihdekohtana perjantai-dedis)
 
 ####Viikko 1 
+
 14.1. aihemäärittelyn tekoa, repon luominen 1h
 
 15.1. maven-projektin luominen, dokumentaatiota 30min
@@ -42,3 +43,12 @@
 11.2. guita, luokkakaavion päivitys 3h
 
 12.2. sekvenssikaavioita 3.5h
+
+###Viikko 5
+
+flunssaa ja uupumusta
+
+###Viikko 6
+
+24.2. graafisen kälin perusosat toimimaan ja lisäkilkkeiden aloitus 5.5h
+
