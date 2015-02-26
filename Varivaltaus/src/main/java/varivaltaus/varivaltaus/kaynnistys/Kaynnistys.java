@@ -19,36 +19,6 @@ public class Kaynnistys {
     }
 
     /**
-     * Tarkoitettu graafisen käyttöliittymän oikean toiminnan testaukseen:
-     * printtaa pelin tilanteen kehittymiset tekstikäyttöliittymä-tyyliin sekä
-     * ilmoitukset siitä, mitä graafisen käyttöliittymän metodeja pelilogiikka
-     * missäkin välissä kutsuu..
-     *
-     * @param leveys Peliruudukon leveys.
-     * @param korkeus Peliruudukon korkeus.
-     * @param variLkm Montako eri väriä peliin halutaan.
-     */
-    private static void kaynnistaGraafinenDebug(int leveys, int korkeus, int variLkm) {
-        Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
-        GraafinenKayttoliittymaDebug gui = new GraafinenKayttoliittymaDebug(pa);
-
-        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), gui);
-
-        SwingUtilities.invokeLater(gui);
-
-        while (!gui.onkoValmisPelinAloitukseen()) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                System.out.println("Käyttöliittymä ei ole vielä valmis.");
-            }
-        }
-
-        pp.aloitaPeli();
-
-    }
-
-    /**
      * Käynnistää pelin graafisen käyttöliittymän kanssa.
      *
      * @param leveys Peliruudukon leveys.
@@ -85,6 +55,32 @@ public class Kaynnistys {
         Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
         Tekstikayttoliittyma ui = new Tekstikayttoliittyma(pa.getRuudukko(), pa.getPelaajat());
         Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), ui);
+
+        pp.aloitaPeli();
+    }
+
+    /**
+     * Käynnistää pelin graafisen käyttöliittymän debuggausversion kanssa.
+     *
+     * @param leveys Peliruudukon leveys.
+     * @param korkeus Peliruudukon korkeus.
+     * @param variLkm Montako eri väriä peliin halutaan.
+     */
+    private static void kaynnistaGraafinenDebug(int leveys, int korkeus, int variLkm) {
+        Pelinalustaja pa = new Pelinalustaja(leveys, korkeus, variLkm);
+        GraafinenKayttoliittymaDebug gui = new GraafinenKayttoliittymaDebug(pa);
+
+        Pelinpyorittaja pp = new Pelinpyorittaja(pa.getRuudukko(), pa.getPelaajat(), gui);
+
+        SwingUtilities.invokeLater(gui);
+
+        while (!gui.onkoValmisPelinAloitukseen()) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                System.out.println("Käyttöliittymä ei ole vielä valmis.");
+            }
+        }
 
         pp.aloitaPeli();
     }

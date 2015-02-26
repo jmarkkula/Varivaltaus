@@ -1,4 +1,3 @@
-
 package varivaltaus.varivaltaus.kayttoliittyma.graafinen;
 
 import java.util.LinkedList;
@@ -9,8 +8,11 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelinalustaja;
 import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 /**
+ * Pyörittää tavallista GraafinenKayttoliittyma-luokan käyttöliittymäoliota,
+ * mutta sen lisäksi tulostaa pelin tilanteen kehittymiset
+ * tekstikäyttöliittymä-tyyliin sekä ilmoitukset siitä, mitä graafisen
+ * käyttöliittymän metodeja pelilogiikka missäkin välissä kutsuu.
  *
- * @author juma
  */
 public class GraafinenKayttoliittymaDebug implements Kayttoliittyma, Runnable {
 
@@ -20,16 +22,16 @@ public class GraafinenKayttoliittymaDebug implements Kayttoliittyma, Runnable {
 
     public GraafinenKayttoliittymaDebug(Pelinalustaja pa) {
         System.out.println("GUI: GraafinenKayttoliittyma-olion luonti kutsuttu");
-        
+
         this.ruudukko = pa.getRuudukko();
-        this.pelaajat=pa.getPelaajat();
+        this.pelaajat = pa.getPelaajat();
         this.gui = new GraafinenKayttoliittyma(pa);
     }
 
     @Override
     public void run() {
         System.out.println("GUI: run kutsuttu");
-        
+
         this.gui.run();
     }
 
@@ -39,17 +41,17 @@ public class GraafinenKayttoliittymaDebug implements Kayttoliittyma, Runnable {
 
         int vari = this.gui.kysyVari(varivaihtoehdot, keneltaKysytaan);
         System.out.println("GUI: GraafinenKayttoliittyma palautti värin nro: " + vari);
-        
+
         return vari;
     }
 
     @Override
     public void paivitaPelilauta() {
         System.out.println("GUI: paivitaPelilauta kutsuttu");
-        
+
         //Teksti
         System.out.println();
-        
+
         System.out.println("Pelilauta:");
         System.out.println(ruudukko.yksinkertainenString());
 
@@ -64,7 +66,7 @@ public class GraafinenKayttoliittymaDebug implements Kayttoliittyma, Runnable {
         //Graafinen
         this.gui.paivitaPelilauta();
     }
-    
+
     public boolean onkoValmisPelinAloitukseen() {
         System.out.println("GUI: onkoValmisPelinAloitukseen kutsuttu");
         return this.gui.onkoValmisPelinAloitukseen();
@@ -73,6 +75,7 @@ public class GraafinenKayttoliittymaDebug implements Kayttoliittyma, Runnable {
     @Override
     public void julistaVoittaja(Pelaaja voittaja) {
         System.out.println("GUI: julistaVoittaja kutsuttu, pelaaja " + voittaja.getPelaajaNro() + " voitti");
+        this.gui.julistaVoittaja(voittaja);
     }
 
 }

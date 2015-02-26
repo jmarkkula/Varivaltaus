@@ -3,15 +3,9 @@ package varivaltaus.varivaltaus.kayttoliittyma.graafinen;
 import java.awt.GridLayout;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
-/**
- *
- * @author juma
- */
 public class Painikepaneeli extends JPanel {
 
     private final HashMap<Integer, Varipainike> varipainikkeet;

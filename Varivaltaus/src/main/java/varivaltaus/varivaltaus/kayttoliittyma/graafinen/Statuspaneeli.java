@@ -12,23 +12,25 @@ public class Statuspaneeli extends JPanel {
 
     private final HashMap<Pelaaja, Pelaajapaneeli> pelaajapaneelit;
 
-    public Statuspaneeli(Ruudukko r, LinkedList<Pelaaja> p, Varit v) {
+    protected Statuspaneeli(LinkedList<Pelaaja> p, Varit v) {
         this.setLayout(new GridLayout(1, p.size()));
 
-        pelaajapaneelit = new HashMap<>();
+        this.pelaajapaneelit = new HashMap<>();
 
         for (Pelaaja pelaaja : p) {
-            Pelaajapaneeli uusi = new Pelaajapaneeli(pelaaja, r, v);
+            Pelaajapaneeli uusi = new Pelaajapaneeli(pelaaja, v);
             this.pelaajapaneelit.put(pelaaja, uusi);
             this.add(uusi);
         }
     }
 
-    public void kysyVari(Pelaaja p) {
-        this.pelaajapaneelit.get(p).kysyVari();
+    protected void paivita() {
+        for(Pelaajapaneeli p: this.pelaajapaneelit.values()) {
+            p.paivita();
+        }
     }
 
-    public void nollaaTeksti(Pelaaja p) {
-        this.pelaajapaneelit.get(p).nollaaTeksti();
+    protected void asetaTeksti(Pelaaja kenelleAsetetaan, String teksti) {
+        this.pelaajapaneelit.get(kenelleAsetetaan).asetaTeksti(teksti);
     }
 }
