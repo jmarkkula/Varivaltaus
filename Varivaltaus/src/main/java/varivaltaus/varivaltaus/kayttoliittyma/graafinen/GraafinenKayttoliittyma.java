@@ -62,12 +62,14 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
 
     private JPanel luoAlapaneelit() {
         JPanel paneelit = new JPanel(new GridLayout(2, 1));
-
-        this.painikepaneeli = new Painikepaneeli(this.ruudukko, this.varit);
-        paneelit.add(this.painikepaneeli);
-
+        
+        //määritä paneelien/painikkeiden koot? framen koosta riippuvainen leveys?
+        
         this.statuspaneeli = new Statuspaneeli(this.pelaajat, this.varit);
         paneelit.add(this.statuspaneeli);
+        
+        this.painikepaneeli = new Painikepaneeli(this.ruudukko, this.varit);
+        paneelit.add(this.painikepaneeli);
 
         return paneelit;
     }
@@ -85,17 +87,17 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
     @Override
     public int kysyVari(List<Integer> varivaihtoehdot, Pelaaja keneltaKysytaan) {
         this.statuspaneeli.asetaTeksti(keneltaKysytaan, "valitse uusi väri alueellesi");
-        
+
         int vari = this.painikepaneeli.kysyVari(varivaihtoehdot);
-        
+
         this.statuspaneeli.asetaTeksti(keneltaKysytaan, "");
-        
+
         return vari;
     }
 
     @Override
     public void paivitaPelilauta() {
-       this.statuspaneeli.paivita();
+        this.statuspaneeli.paivita();
         this.frame.revalidate();
         this.frame.repaint();
     }

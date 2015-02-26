@@ -15,7 +15,7 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        kaynnistaGraafinenDebug(10, 6, 5);
+        kaynnistaGraafinenDebug(35, 20, 5);
     }
 
     /**
