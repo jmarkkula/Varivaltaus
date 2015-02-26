@@ -50,5 +50,7 @@ flunssaa ja uupumusta
 
 ###Viikko 6
 
-24.2. graafisen kälin perusosat toimimaan ja lisäkilkkeiden aloitus 5.5h
+24.2. guin perusosat toimimaan ja lisäkilkkeiden aloitus 5.5h
+
+25.2. javadocceja, guita, hölmöjen bugien väsynyttä metsästämistä 6h
 
