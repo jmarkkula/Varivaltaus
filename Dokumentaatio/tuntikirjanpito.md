@@ -38,17 +38,17 @@
 
 5.2. testejä, käyttöliittymän ihmettelyä 4.5h
 
-####Viikko 4
+####Viikko 5
 
 11.2. guita, luokkakaavion päivitys 3h
 
 12.2. sekvenssikaavioita 3.5h
 
-###Viikko 5
+###Viikko 6
 
 flunssaa ja uupumusta
 
-###Viikko 6
+###Viikko 7
 
 24.2. guin perusosat toimimaan ja lisäkilkkeiden aloitus 5.5h
 
