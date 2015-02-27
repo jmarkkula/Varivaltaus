@@ -1,2 +1,2 @@
 # Varivaltaus
-Aineopintojen harjoitustyö: Ohjelmointi (periodi III)
+Aineopintojen harjoitustyö: Ohjelmointi (periodi III, 2015)
