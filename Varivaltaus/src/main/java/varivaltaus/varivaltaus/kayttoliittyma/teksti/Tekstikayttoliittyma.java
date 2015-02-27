@@ -6,8 +6,7 @@ import varivaltaus.varivaltaus.kayttoliittyma.Kayttoliittyma;
 import varivaltaus.varivaltaus.pelilogiikka.*;
 
 /**
- *
- * @author juma
+ * Simppeli tekstikäyttöliittymä.
  */
 public class Tekstikayttoliittyma implements Kayttoliittyma {
 
