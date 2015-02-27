@@ -54,3 +54,6 @@ flunssaa ja uupumusta
 
 25.2. javadocceja, guita, hölmöjen bugien väsynyttä metsästämistä 6h
 
+26.2. demotapahtuma 2h
+
+27.2. ohjelman viimeistelyä, dokumentaatiota, ihmettelyä 3h
