@@ -43,6 +43,7 @@ public class GraafinenKayttoliittyma implements Kayttoliittyma, Runnable {
 
         frame.setPreferredSize(new Dimension(this.ruudukko.getLeveys() * 100, this.ruudukko.getKorkeus() * 100));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
         luoKomponentit(frame.getContentPane());
 

@@ -9,13 +9,12 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
 
 /**
  * Main-luokka, käynnistää pelin.
- *
- * @author juma
  */
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        kaynnistaGraafinenDebug(35, 20, 5);
+        kaynnistaGraafinen(30, 15, 5);
+         kaynnistaGraafinen(6, 4, 5);
     }
 
     /**

@@ -1,12 +1,10 @@
 package varivaltaus.varivaltaus.kayttoliittyma.graafinen;
 
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.HashMap;
 import java.util.LinkedList;
 import javax.swing.JPanel;
 import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
-import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 public class Statuspaneeli extends JPanel {
 
