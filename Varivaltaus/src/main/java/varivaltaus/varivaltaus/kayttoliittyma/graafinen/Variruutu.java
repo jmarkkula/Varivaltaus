@@ -4,7 +4,10 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 import varivaltaus.varivaltaus.pelilogiikka.Ruutu;
 
-
+/**
+ * Pelilaudan väriruutu joka on sidoksissa aina yhteen pelilogiikan ruutuun,
+ * jolta saa tiedon väristään.
+ */
 public class Variruutu extends JPanel {
 
     private final Varit varit;
@@ -14,11 +17,11 @@ public class Variruutu extends JPanel {
         this.varit = v;
         this.ruutu = r;
     }
-   
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        
+
         int leveys = this.getWidth();
         int korkeus = this.getHeight();
 

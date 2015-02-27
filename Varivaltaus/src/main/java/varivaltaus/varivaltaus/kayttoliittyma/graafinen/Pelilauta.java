@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package varivaltaus.varivaltaus.kayttoliittyma.graafinen;
 
 import javax.swing.JPanel;
@@ -10,8 +6,7 @@ import java.awt.GridLayout;
 import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 /**
- *
- * @author juma
+ * Varsinainen pelialue, sisältää väriruudut.
  */
 public class Pelilauta extends JPanel {
 

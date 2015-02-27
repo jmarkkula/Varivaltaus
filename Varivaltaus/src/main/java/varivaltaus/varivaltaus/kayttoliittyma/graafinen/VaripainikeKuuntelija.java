@@ -4,8 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
- * @author juma
+ * Kuuntelija väripainikkeille.
  */
 public class VaripainikeKuuntelija implements ActionListener {
 
@@ -13,8 +12,8 @@ public class VaripainikeKuuntelija implements ActionListener {
     private int painettuVari;
 
     public VaripainikeKuuntelija() {
-        this.nappiaPainettu=false;
-        this.painettuVari=-666;
+        this.nappiaPainettu = false;
+        this.painettuVari = -666;
     }
 
     @Override
@@ -25,6 +24,13 @@ public class VaripainikeKuuntelija implements ActionListener {
         this.nappiaPainettu = true;
     }
 
+    /**
+     * Nollaa kuuntelijan ja palauttaa viimeksi painetun napin värin.
+     *
+     * @return int väri, jota käyttäjä viimeksi painoi
+     * @throws Exception jos nappia ei oltu tätä kutsuessa vielä painettu
+     * (selviää onkoPainettu()-metodilla), heittää virheilmoituksen.
+     */
     public int kasittelePainanta() throws Exception {
         if (this.nappiaPainettu) {
             this.nappiaPainettu = false;
