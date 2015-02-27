@@ -8,7 +8,8 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelaaja;
 import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 /**
- * Sisältää pelaajapaneelit, jotka näyttävät käyttäjälle ilmoituksia pelitilanteesta.
+ * Sisältää pelaajapaneelit, jotka näyttävät käyttäjälle ilmoituksia
+ * pelitilanteesta.
  */
 public class Statuspaneeli extends JPanel {
 
@@ -27,7 +28,7 @@ public class Statuspaneeli extends JPanel {
     }
 
     protected void paivita() {
-        for(Pelaajapaneeli p: this.pelaajapaneelit.values()) {
+        for (Pelaajapaneeli p : this.pelaajapaneelit.values()) {
             p.paivita();
         }
     }

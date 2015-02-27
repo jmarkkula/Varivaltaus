@@ -7,7 +7,8 @@ import javax.swing.JPanel;
 import varivaltaus.varivaltaus.pelilogiikka.Ruudukko;
 
 /**
- * Hallinnoi väripainikkeita, joiden avulla saadaan käyttäjältä värivalintasyöte.
+ * Hallinnoi väripainikkeita, joiden avulla saadaan käyttäjältä
+ * värivalintasyöte.
  */
 public class Painikepaneeli extends JPanel {
 
@@ -44,8 +45,7 @@ public class Painikepaneeli extends JPanel {
         while (!this.kuuntelija.onkoPainettu()) {
             try {
                 Thread.sleep(10);
-            }
-            catch (InterruptedException ex) {
+            } catch (InterruptedException ex) {
                 System.out.println("kysyVari heittää InterruptedException");
             }
         }
@@ -54,8 +54,7 @@ public class Painikepaneeli extends JPanel {
 
         try {
             vari = this.kuuntelija.kasittelePainanta();
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             System.out.println("Kutsuttiin kasittelePainanta() kun mitään ei oltu painettu");
         }
 

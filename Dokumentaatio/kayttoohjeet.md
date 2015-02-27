@@ -1,7 +1,7 @@
 #Käyttöohjeet
 
 ###Pelin käynnistys:
-Aja .jar tiedosto.
+Aja .jar tiedosto klikkaamalla sitä (Windows) tai komentoriviltä Varivaltaus-hakemistossa komennolla "java -jar Varivaltaus.jar" (Linux)
 
 ###Pelin säännöt:
 Värivaltaus on kaksinpeli jossa tarkoituksena on vallata pelilaudalta ruutuja. 

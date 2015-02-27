@@ -13,8 +13,7 @@ import varivaltaus.varivaltaus.pelilogiikka.Pelinpyorittaja;
 public class Kaynnistys {
 
     public static void main(String[] args) {
-        kaynnistaGraafinen(30, 15, 5);
-         kaynnistaGraafinen(6, 4, 5);
+        kaynnistaGraafinen(30, 20, 5);
     }
 
     /**
