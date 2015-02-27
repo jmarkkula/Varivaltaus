@@ -7,5 +7,6 @@ Aja .jar tiedosto.
 V‰rivaltaus on kaksinpeli jossa tarkoituksena on vallata pelilaudalta ruutuja. 
 Pelilauta koostuu suuresta m‰‰r‰st‰ eri v‰risi‰ ruutuja.  
 Pelaajat aloittavat vastakkaisista kulmista (vasen yl‰, oikea ala), vasemman yl‰nurkan pelaaja aloittaa.
-Pelaajat valtaavat ruutuja valitsemalla vuorotellen uuden v‰rin alueelleen, haluamansa v‰rist‰ alareunan nappia painamalla. Ne oman alueen yhteydess‰ olevat ruudut,
-jotka ovat samanv‰risi‰ kuin valittu v‰ri, liitet‰‰n n‰in omaan alueeseen. Pelaaja, joka on ensimm‰isen‰ vallannut v‰hint‰‰n 50% ruuduista, voittaa, jolloin peli loppuu.
+Pelaajat valtaavat ruutuja valitsemalla vuorotellen uuden v‰rin alueelleen, haluamansa v‰rist‰ alareunan nappia painamalla. 
+V‰rivaihtoehtoihin sis‰ltyv‰t kaikki pelilaudan v‰rit, paitsi se v‰ri, joka pelaajan alueella jo on, ja se joka vastustajan alueella sill‰ hetkell‰ on.
+Ne oman alueen yhteydess‰ olevat ruudut, jotka ovat samanv‰risi‰ kuin valittu v‰ri, liitet‰‰n n‰in omaan alueeseen. Pelaaja, joka on ensimm‰isen‰ vallannut v‰hint‰‰n 50% ruuduista, voittaa, jolloin peli loppuu.
